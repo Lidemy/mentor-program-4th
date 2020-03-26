@@ -88,7 +88,7 @@ echo "檔案建立完成";
 舉例來說：`./num.sh 10`會產生`1.js`、`2.js`...`10.js`。
 
 <details>
-  <summary>提示：</summary>
+  <summary>提示 #1</summary>
   去找找看怎麼在 shell script 裡面寫迴圈吧！
 </details>
 
@@ -109,11 +109,11 @@ https://medium.com/@hulitw
 ```
 
 <details>
-  <summary>提示1：</summary>
+  <summary>提示 #1</summary>
   你知道嗎？用這個網址可以取得使用者的資料：https://api.github.com/users/aszx87410
 </details>
 
 <details>
-  <summary>提示2：</summary>
+  <summary>提示 #2</summary>
   cut, grep, sed, awk 這些指令都是字串處理的好夥伴
 </details>
