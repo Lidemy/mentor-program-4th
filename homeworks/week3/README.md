@@ -1,68 +1,26 @@
 # 作業
 
-在交這週的作業以前，請務必確認 hw1~hw4 都已經通過 [Lidemy OJ](https://lidemy-oj.netlify.com/contests/2) 的測試並拿到 100 分。只有 hw5 例外，hw5 沒有寫對還是可以交作業（因為比較難）。
+在交這週的作業以前，請務必確認每一題都已經通過 [Lidemy OJ](https://oj.lidemy.com/) 的測試並拿到 AC。
 
 ## hw1：好多星星  
-給定 n（1<=n<=30），依照規律「回傳」正確圖形（每一行是一個陣列的元素）
 
-```
-n = 1
-["*"]
+[LIOJ1021 - 好多星星](https://oj.lidemy.com/problem/1021)
 
-n = 3
-["*", "**", "***"]
+## hw2：水仙花數
 
-n = 6
-["*", "**", "***", "****", "*****", "******"]
-```
-
-## hw2：大小寫互換
-給定一字串，把小寫字母轉成大寫，大寫字母轉成小寫之後回傳，若不是英文字母則忽略。
-
-```
-input: nick
-output: NICK
-
-input: Nick
-output: nICK
-
-input: ,hEllO122
-output: ,HeLLo123
-```
+[LIOJ1025 - 水仙花數](https://oj.lidemy.com/problem/1025)
 
 ## hw3：判斷質數
-給定一個數字 n（1<=n<=100000），請回傳 n 是否為質數（質數的定義：除了 1 以外，所有小於他的數都無法整除）
 
-```
-n = 2 => true
-n = 3 => true
-n = 10 => false
-n = 37 => true
-n = 38 => false
-```
+[LIOJ1020 - 判斷質數](https://oj.lidemy.com/problem/1020)
 
 ## hw4：判斷迴文
-給定一個長度小於 100 的字串 s，請回傳 s 是否為迴文（迴文的定義：正著唸倒著念都一樣）
 
-```
-abcba => true
-apple => false
-aaaaa => true
-applppa => true
-```
+[LIOJ1030 - 判斷迴文](https://oj.lidemy.com/problem/1030)
 
-## hw5：大數加法
-給定兩個長度為 l(1<=l<=1000)的數字（但型態為字串），請回傳兩個數字相加後的結果。  
+## hw5：聯誼順序比大小
 
-提示：
-
-1. 這題不是要考你型態轉換，而且這題很難，真的很難
-2. 小時候怎麼做直式加法，這一題就怎麼做，可以拿紙跟筆試試看
-
-```
-"123"+"456" => "579"
-"12312383813881381381"+"129018313819319831" => "12441402127700701212"
-```
+[LIOJ1004 - 聯誼順序比大小](https://oj.lidemy.com/problem/1004)
 
 ## hw6：簡答題
 請將答案寫在 [hw6.md](hw6.md)。
@@ -71,8 +29,23 @@ applppa => true
 
 ## 挑戰題
 
-大數乘法：給定兩個長度為 l(1<=l<=1000)的數字（但型態為字串），請回傳兩個數字「相乘」後的結果。
+[LIOJ1053 - 走迷宮](https://oj.lidemy.com/problem/1053)
+
+<details>
+  <summary>提示 #1</summary>
+  BFS，廣度優先搜尋法
+</details>
 
 ## 超級挑戰題
 
-大數除法：給定兩個長度為 l(1<=l<=1000)的數字（但型態為字串），請回傳兩個數字「相除」後的結果。
+[LIOJ1052 - 貪婪的小偷 Part2](https://oj.lidemy.com/problem/1052)
+
+<details>
+  <summary>提示 #1</summary>
+  這題可以暴力解，試著舉出每一種可能的組合
+</details>
+
+<details>
+  <summary>提示 #2</summary>
+  請 Google：「背包問題 DP」
+</details>

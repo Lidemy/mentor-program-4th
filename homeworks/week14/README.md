@@ -11,11 +11,9 @@
 
 ## hw2：部署
 
-請把你之前寫的 PHP 程式部署到自己的機器上面，並且對應到自己購買的網域。 
+請把你之前寫的 PHP 程式部署到自己的機器上面，並且對應到自己購買的網域，並且寫下部署的心得。
 
-可參考其他同學的心得（特別感謝 @yuchun33 跟 @futianshen ）：
-1. [部署 AWS EC2 遠端主機 + Ubuntu LAMP 環境 + phpmyadmin ](https://github.com/Lidemy/mentor-program-2nd-yuchun33/issues/15)
-2. [一小時完成 VPS (Virtual Private Server) 部署 ](https://github.com/Lidemy/mentor-program-2nd-futianshen/issues/21)
+請將答案寫在 [hw2.md](hw2.md)。
 
 ## hw3：簡答題
 

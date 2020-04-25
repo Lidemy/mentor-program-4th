@@ -36,36 +36,58 @@ node hw1.js
 ....
 ```
 
-## hw2：不滿足的秋秋鞋
+## hw2：最後的考驗
 
-雖然說上次你幫秋秋鞋完成了列出書籍清單的程式，但是一次列出十本實在是太少了，大概一個禮拜就可以把這些資訊消化完，但是經營頻道卻是長期的事情，他需要更多更多的資料才行。例如說一次應該要輸出二十本書，然後可以輸入一個 id 就返回書籍資料，這樣他就可以隨便想一個數字，然後看看是哪本書，對於靈感很有幫助。
+原本以為上次就已經是最後一次幫忙，沒想到秋秋鞋還是又跑來找你了。他說他想要更多功能，他想把這整個書籍資料庫當作自己的來用，必須能夠顯示前 20 本書的資料、刪除、新增以及修改書本，這樣他就可以管理自己的書籍了。
 
-請你閱讀開頭給的 API 文件並串接，用 node.js 寫出一個程式並接受參數，輸出相對應的結果，範例如下：
-
-``` js
-node hw2.js list // 印出前二十本書的 id 與書名
-node hw2.js read 1 // 輸出 id 為 1 的書籍資料
-```
-
-## hw3：最後的考驗
-
-原本以為上次就已經是最後一次幫忙，沒想到秋秋鞋還是又跑來找你了。他說他想要更多功能，他想把這整個書籍資料庫當作自己的來用，必須能夠刪除、新增以及修改書本，這樣他就可以管理自己的書籍了。
-
-雖然你很想問他說為什麼不用 Excel 就好，但你問不出口，再加上你最近剛學成是需要練習的機會，於是你就答應了。
+雖然你很想問他說為什麼不用 Excel 就好，但你問不出口，再加上你最近剛學程式需要練習的機會，於是你就答應了。
 
 請閱讀開頭給的 API 文件並串接，用 node.js 寫出一個程式並接受參數，輸出相對應的結果，範例如下：
 
 ``` js
-node hw3.js list // 印出前二十本書的 id 與書名
-node hw3.js read 1 // 輸出 id 為 1 的書籍
-node hw3.js delete 1 // 刪除 id 為 1 的書籍
-node hw3.js create "I love coding" // 新增一本名為 I love coding 的書
-node hw3.js update 1 "new name" // 更新 id 為 1 的書名為 new name
+node hw2.js list // 印出前二十本書的 id 與書名
+node hw2.js read 1 // 輸出 id 為 1 的書籍
+node hw2.js delete 1 // 刪除 id 為 1 的書籍
+node hw2.js create "I love coding" // 新增一本名為 I love coding 的書
+node hw2.js update 1 "new name" // 更新 id 為 1 的書名為 new name
 ```
+
+<details>
+  <summary>提示 #1</summary>
+  你可以用 `process.argv` 這個陣列拿到相對應的參數，不妨先把它印出來觀察看看！
+</details>
+
+## hw3：我在墾丁天氣晴
+
+你的好麻吉最近打算去墾丁玩，但墾丁畢竟是個玩水的地方，若是下雨了就不好玩了。因此，你的好麻吉幾乎每天都會跑來問你說：「今天墾丁天氣怎麼樣？」，你可能會想說他幹嘛不自己查，這是因為他已經因為查詢次數過多，而被天氣網站給 ban 掉了，所以只能來拜託你。
+
+可是呢，你要每天一直去看天氣網站也很討厭，因此就決定寫一個小程式來串接 API，輸出墾丁現在的天氣以及溫度跟濕度，範例如下：
+
+``` js
+node hw3.js
+
+天氣：短暫陣雨
+溫度：18
+濕度：91
+```
+
+雖然說氣象局有提供正式的 API，但因為要申請所以手續比較繁瑣。因此這次要串接的是由[工程師吳政賢 OA Wu](https://www.ioa.tw/?f=works) 所提供的 [Weather API](https://works.ioa.tw/weather/api/doc/index.html#api-Weather_API)。
+
+話說墾丁隸屬於屏東市恆春鎮，所以我們要顯示的其實是恆春鎮的天氣，現在就請你閱讀 API 文件，找到對的 API，顯示出恆春現在的天氣。
+
+<details>
+  <summary>提示 #1</summary>
+  你可以透過 [API 01：取得所有縣市鄉鎮](https://works.ioa.tw/weather/api/all.json)，找到屏東市恆春鎮的 id
+</details>
+
+<details>
+  <summary>提示 #2</summary>
+  透過 [API 05：取得指定鄉鎮天氣](https://works.ioa.tw/weather/api/doc/index.html#api-Weather_API-GetHttpsWorksIoaTwWeatherApiWeathersIdJson)，只要傳入恆春的 id，就可以拿到天氣資料
+</details>
 
 ## hw4：探索新世界
 
-上次幫秋秋鞋做完那個小程式以後，你會寫程式的消息似乎就傳開了，有一位 Twitch 平台實況主果凍跑來聯繫你，想請你幫忙做個東西。
+之前幫秋秋鞋做完那個小程式以後，你會寫程式的消息似乎就傳開了，有一位 Twitch 平台實況主果凍跑來聯繫你，想請你幫忙做個東西。
 
 事情是這樣的，他原本是 LOL 的玩家，但因為某些原因帳號被 ban 掉了，為了維持實況的熱度，需要去找其他遊戲來玩，可是他又不知道哪些遊戲比較熱門，會有比較多人觀看。
 
@@ -73,7 +95,9 @@ node hw3.js update 1 "new name" // 更新 id 為 1 的書名為 new name
 
 由於你偶爾也會看他的實況，所以你欣然接受了這個挑戰，準備來串串看真實世界的 API。
 
-請參考 [Twitch API](https://dev.twitch.tv/docs/api/) 的文件，寫一隻程式去呼叫 Twitch API，並拿到「最受歡迎的遊戲列表（Get Top Games）」然後依序印出 id 跟遊戲名稱。
+請參考 [Twitch API](https://dev.twitch.tv/docs/api/) 的文件，寫一隻程式去呼叫 Twitch API，並拿到「最受歡迎的遊戲列表（Get Top Games）」，並依序印出 id 跟遊戲名稱。
+
+在這個作業中，你必須自己看懂 Twitch API 的文件，知道怎麼去申請一個 Application 拿到 ClientID，並且在 API 文件當中找到對的那一個 API（Get Top Games）。
 
 ``` js
 node hw4.js
@@ -84,6 +108,20 @@ node hw4.js
 33214 Fortnite
 ....
 ```
+
+<details>
+  <summary>提示 #1</summary>
+  Getting Started with the Twitch API 的第一段「Step 1: Setup」特別重要，你必須先申請 Twitch 帳號，然後前往 Twitch developer dashboard 註冊一個新的 Application，OAuth redirect URI 我們不會用到，隨便填就好，最後你會拿到一個 ClientID
+
+  接著就是從 [API 列表](https://dev.twitch.tv/docs/api/reference)中找到對的 API 囉！
+</details>
+
+<details>
+  <summary>提示 #2</summary>
+  API 文件在這：[Get Top Games](https://dev.twitch.tv/docs/api/reference#get-top-games)，細節都在文件裡了
+
+  需要注意的是你必須要把 Client-ID 當成一個 header 傳送給 API，至於怎麼帶 header，請參考：[request 文件](https://github.com/request/request#custom-http-headers)
+</details>
 
 ## hw5：簡答題
 
