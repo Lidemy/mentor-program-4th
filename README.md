@@ -513,6 +513,8 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 然後看看[程式導師實驗計畫第二期：Week8-1 後端基礎（下）](https://www.youtube.com/watch?v=QiCm9JE43KM)來學習什麼是 View、Stored Procedure 與 Trigger（這影片前半段是以前 Todo list 作業的檢討，可以跳過）。
 
+系統架構：[CS75 (Summer 2012) Lecture 9 Scalability Harvard Web Development David Malan](https://www.youtube.com/watch?v=-W9F__D3oY4)
+
 [HW14 作業連結](/homeworks/week14)
 
 #### 自我檢測
@@ -537,7 +539,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 2. 資訊安全（Hashing、SQL Injection、XSS）
 3. jQuery
 4. Bootstrap
-5. Promise
+5. CSS 預處理器、Webpack
 6. 部署
 
 這一週的作業除了心得以外，也提供了一個跟以往不太一樣的測驗：[網站前後端開發基礎測試](https://github.com/Lidemy/mentor-program-3rd/issues/5)，一共十題簡答題，答案預設是隱藏的，自己答完之後可以自己點開對答案。
@@ -617,40 +619,27 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 - [ ] P1 我知道如何使用 PM2
 - [ ] P1 我知道如何部署 Node.js 應用程式
 
-### 第十九週（10/19 ~ 10/25）：網路基礎複習
+### 第十九週（10/19 ~ 10/25）：產品開發流程
 
-學到這週為止，前後端的概念你應該滿清楚了，我們也學了不少東西，下一週是複習週，再下一週就要正式進入前後端框架的領域了。
+前面講了很多技術相關的東西，但是在產品面上一直沒什麼著墨。下一週開始就要進入到課程的最後一個階段了，也就是前端框架以及期末作業。在開始之前，先跟大家講一下產品開發流程還有工作流程會是一件滿重要的事。
 
-在進入到那邊以前，我們還要來複習一些東西並且加強基礎。
+這一週會帶大家看看學習系統在開發新功能時的一些記錄，讓大家看看產品開發流程會長什麼樣子。
 
-我們首先要加強的第一個東西是複習前面教的網路基礎，你必須對前後端溝通的每一個流程都很確定，在之後的單元中才不會迷失自我。
+除了產品開發流程以外，這週也會帶大家練習全新的思考模式，並且做一個簡單的前端框架出來，幫以後的學習鋪路。
 
-接著要來講的是 SPA，還記得之前貼給你們看過的那兩篇文章嗎？[零基礎的小明要如何成為前端工程師？](https://medium.com/hulis-blog/frontend-engineer-guide-297821512f4e)、[跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)，這週的重點會放在這兩篇文章上面，讓大家清楚知道背後的概念為何。
-
-指定教材：
-
-1. 複習第四週網路概念：[CS75 (Summer 2012) Lecture 0 HTTP Harvard Web Development David Malan](https://www.youtube.com/watch?v=8KuO4r5CHjM)
-2. 複習第十四週系統架構：[CS75 (Summer 2012) Lecture 9 Scalability Harvard Web Development David Malan](https://www.youtube.com/watch?v=-W9F__D3oY4)
+#### 指定教材
 
 [HW19 作業連結](/homeworks/week19)
 
 #### 自我檢測
 
-- [ ] 你知道什麼是 SPA
-- [ ] 你知道後端 MVC 與前端 MVC 的差異
-- [ ] 你知道前端路由與後端路由的差異
+- [ ] P1 知道什麼是 Scrum
+- [ ] P1 知道 Scrum 中通常會有哪些元素
+- [ ] P1 知道什麼是 user story
 
 ### 第二十週（10/26 ~ 11/01）：複習週
 
-這是最後一次的複習週了，在前幾週我們一共學了：
-
-1. CSS 預處理器
-2. 基本資料結構
-3. HTTP Cache
-4. JavaScript 觀念：scope、hoisting、closure、prototype、this
-5. Event Loop
-6. Gulp 與 Webpack
-7. 網頁圖片優化
+這是最後一次的複習週了，在前幾週我們同時加強前後端，並且最後帶到產品開發的相關概念，讓大家對整個開發流程又理解更多了一些。
 
 至此，這個課程的基礎跟中階都學完了，從下週開始就要進入到前端框架的領域。
 
@@ -664,7 +653,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 [HW20 作業連結](/homeworks/week20)
 
-### 第二十一週（11/02 ~ 11/08）：前後端框架（一）
+### 第二十一週（11/02 ~ 11/08）：前端框架（一）
 
 終於要進入到前端框架 React 了（雖然嚴格來說 React 並不是一個框架，但搭配其他各種 React 生態系成員，其實就算是一個框架了）。
 
@@ -680,21 +669,17 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 4. [官方教學](https://reactjs.org/tutorial/tutorial.html)
 5. [React.js 小書](http://huziketang.mangojuice.top/books/react/)
 
-不確定有沒有幫助（因為內容跟第二期重疊的部分很多）：
-
-1. 程式導師實驗計畫：Lesson 12-1 之 React
-2. 程式導師實驗計畫：Lesson 12-2 之 React 下
 
 [HW21 作業連結](/homeworks/week21/fe)
 
 #### 自我檢測
 
-- [ ] 我知道 React 的目的以及原理
-- [ ] 我知道我們為什麼需要 React
-- [ ] 我知道使用 React 跟之前使用 jQuery 的區別
-- [ ] 我理解 state 跟 props 的不同
+- [ ] P1 我知道 React 的目的以及原理
+- [ ] P1 我知道我們為什麼需要 React
+- [ ] P1 我知道使用 React 跟之前使用 jQuery 的區別
+- [ ] P1 我理解 state 跟 props 的不同
 
-### 第二十二週（11/09 ~ 11/15）：前後端框架（二）
+### 第二十二週（11/09 ~ 11/15）：前端框架（二）
 
 在上一週結束之後，大家應該對 React 有了一些基本的感覺，這一週我們要繼續培養對 React 的感覺，讓大家對 React 越來越熟練。
 
@@ -718,7 +703,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 - [ ] 我知道什麼是 Single Page Application
 - [ ] 我理解現在的前端與以往的差別
 
-### 第二十三週（11/16 ~ 11/22）：前後端框架（三）
+### 第二十三週（11/16 ~ 11/22）：前端框架（三）
 
 在之前的 React 課程中，我們已經慢慢熟悉 React 的思考模式，可是還有一些問題還沒解決，雖然你現在感受不太到，但是在 App 慢慢變大之後就會碰到了。
 
@@ -736,7 +721,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 - [ ] 我理解 Redux 的目的以及原理
 - [ ] 我知道我們為什麼需要 Redux
 
-### 第二十四週（11/23 ~ 11/29）：前後端框架（四）
+### 第二十四週（11/23 ~ 11/29）：前端框架（四）
 
 最後一週裡面我們將用 redux 來解決非同步操作的問題，讓大家知道如何利用它與 redux-promise 來解決非同步的一些問題。
 
