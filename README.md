@@ -418,7 +418,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 也可以看 [CS101] 初心者的計概與 coding 火球術：4-3、5-4 複習一下資訊安全相關的觀念。想知道更多資安相關的概念，可以參考：[程式導師實驗計畫第二期：Week6-2：資訊安全](https://www.youtube.com/watch?v=HGjjxKsCgr0)
 
-課程中有一個東西叫做 CSRF 沒有講，是考驗你自學能力的時候，推薦閱讀這篇：[讓我們來談談 CSRF](https://blog.techbridge.cc/2017/02/25/csrf-introduction/)
+有一個與資安相關的東西叫做 CSRF，在課程中沒有講，是考驗你自學能力的時候，推薦閱讀這篇：[讓我們來談談 CSRF](https://blog.techbridge.cc/2017/02/25/csrf-introduction/)
 
 [HW11 作業連結](/homeworks/week11)
 
