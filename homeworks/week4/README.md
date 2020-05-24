@@ -77,11 +77,13 @@ node hw3.js
 
 <details>
   <summary>提示 #1</summary>
+  
   你可以透過 [API 01：取得所有縣市鄉鎮](https://works.ioa.tw/weather/api/all.json)，找到屏東市恆春鎮的 id
 </details>
 
 <details>
   <summary>提示 #2</summary>
+
   透過 [API 05：取得指定鄉鎮天氣](https://works.ioa.tw/weather/api/doc/index.html#api-Weather_API-GetHttpsWorksIoaTwWeatherApiWeathersIdJson)，只要傳入恆春的 id，就可以拿到天氣資料
 </details>
 
@@ -111,6 +113,7 @@ node hw4.js
 
 <details>
   <summary>提示 #1</summary>
+
   Getting Started with the Twitch API 的第一段「Step 1: Setup」特別重要，你必須先申請 Twitch 帳號，然後前往 Twitch developer dashboard 註冊一個新的 Application，OAuth redirect URI 我們不會用到，隨便填就好，最後你會拿到一個 ClientID
 
   接著就是從 [API 列表](https://dev.twitch.tv/docs/api/reference)中找到對的 API 囉！
@@ -118,6 +121,7 @@ node hw4.js
 
 <details>
   <summary>提示 #2</summary>
+
   API 文件在這：[Get Top Games](https://dev.twitch.tv/docs/api/reference#get-top-games)，細節都在文件裡了
 
   需要注意的是你必須要把 Client-ID 當成一個 header 傳送給 API，至於怎麼帶 header，請參考：[request 文件](https://github.com/request/request#custom-http-headers)
