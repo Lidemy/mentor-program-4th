@@ -36,6 +36,18 @@ node hw1.js
 ....
 ```
 
+<details>
+  <summary>提示 #1</summary>
+  
+  API 文件通常都不會給出完整網址，因為絕大多數 API 其實都是透過兩個部分所組成：
+
+  1. Base URL
+  2. 不同的 path
+
+  例如說你在看「獲取所有書籍」這隻 API 的時候，path 是 `/books`，跟 Base URL 結合起來之後就會變成：`https://lidemy-book-store.herokuapp.com/books`，這就是完整的 API 位置。
+
+</details>
+
 ## hw2：最後的考驗
 
 原本以為上次就已經是最後一次幫忙，沒想到秋秋鞋還是又跑來找你了。他說他想要更多功能，他想把這整個書籍資料庫當作自己的來用，必須能夠顯示前 20 本書的資料、刪除、新增以及修改書本，這樣他就可以管理自己的書籍了。
@@ -54,6 +66,7 @@ node hw2.js update 1 "new name" // 更新 id 為 1 的書名為 new name
 
 <details>
   <summary>提示 #1</summary>
+
   你可以用 `process.argv` 這個陣列拿到相對應的參數，不妨先把它印出來觀察看看！
 </details>
 
@@ -77,7 +90,7 @@ node hw3.js
 
 <details>
   <summary>提示 #1</summary>
-  
+
   你可以透過 [API 01：取得所有縣市鄉鎮](https://works.ioa.tw/weather/api/all.json)，找到屏東市恆春鎮的 id
 </details>
 
