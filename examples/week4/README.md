@@ -1,4 +1,4 @@
-# 注意事項
+# Week4 作業自我檢討
 
 ## JSON.parse
 
@@ -10,15 +10,18 @@ let json = JSON.parse(str)
 // VM174:1 Uncaught SyntaxError: Unexpected end of JSON input
 ``` 
 
-所以最完善的做法其實是外面加個 try catch：
+所以最完善的做法其實是加個 try catch：
 
 ``` js
+let json;
 try {
-  let json = JSON.parse(str)
+  json = JSON.parse(str)
 } catch(e) {
   console.log(e) // 錯誤處理
 }
 ```
+
+這樣就可以確保錯誤有被處理到。不過在參考解答裡面也沒有加就是了，代表參考解答還有改進空間，這點就留給大家去改進了XD
 
 然後大家千萬不要搞混「JSON 格式的字串」跟 JavaScript Object 這兩個東西了。當你利用 xhr 拿到 response 的時候，它一定是一個字串，請大家記住這一點。
 
@@ -64,7 +67,11 @@ for (let i = 0; i < 10; i += 1) {
 }
 ```
 
-但這是不對的。因為 API 有可能回傳比十筆更少的資料（例如說資料就只有五筆，那 API 怎麼會回傳十筆？），所以在這個時候，請相信你的 API，直接把後端回傳的資料印出來就好：
+這是不對的。
+
+第一，API 有提供一個參數叫做 `_limit`，你應該要用這個參數，而不是自己把資料抓下來以後才去取 10 個。這樣會有什麼問題呢？假設 API 回傳 100 筆資料，那你其他 90 筆不就白抓了？所以請愛用 API 提供的參數。
+
+第二，API 有可能回傳比十筆更少的資料（例如說資料就只有五筆，那 API 怎麼會回傳十筆？），所以在這個時候，請相信你的 API，加了 `_limit=10` 的參數以後，直接把後端回傳的資料印出來就好：
 
 ``` js
 for (let i = 0; i < data.length; i += 1) {
