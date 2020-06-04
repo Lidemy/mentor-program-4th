@@ -20,9 +20,9 @@ API 會按照機率回傳不同的獎項名稱，請你針對不同的獎項名�
 
 獎項名稱一共有四種：FIRST、SECOND、THIRD 以及 NONE。
 
-1. FIRST，頭獎，在網頁上顯示字樣：「恭喜你中頭獎了！日本東京來回雙人遊！」，並且把背景改成天空色，網頁上放一張飛機的圖片。
-2. SECOND，二獎，在網頁上顯示字樣：「二獎！90 吋電視一台！」，並且在網頁上放一張電視的圖片。
-3. THIRD，三獎，在網頁上顯示字樣：「恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！」，並且在網頁上放 YouTube 的 Logo。
+1. FIRST，頭獎，在網頁上顯示字樣：「恭喜你中頭獎了！日本東京來回雙人遊！」，並且把背景改成[這張圖片](https://pixabay.com/photos/flight-plane-close-look-airplane-4315953/)。
+2. SECOND，二獎，在網頁上顯示字樣：「二獎！90 吋電視一台！」，並且把背景換成[這張圖片](https://pixabay.com/photos/living-room-tv-table-a-drawer-home-1872192/)。
+3. THIRD，三獎，在網頁上顯示字樣：「恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！」，並且在網頁上放[這張圖片](https://pixabay.com/photos/youtube-iphone-smartphone-mobile-2617510/)。
 4. NONE，銘謝惠顧，在網頁上顯示字樣：「銘謝惠顧」，並且把整個網頁變成黑底白字。
 
 有一點要特別注意，API 偶爾可能會不太穩定，會回傳錯誤。如果發生任何預期之外的情形（回傳的獎項不是以上四種，或是 Server 直接回傳錯誤），請跳出提示視窗（alert）：「系統不穩定，請再試一次」。
@@ -37,7 +37,7 @@ API 會按照機率回傳不同的獎項名稱，請你針對不同的獎項名�
 
 最近又太多太多實況主了，每個都有不同的特色，除了精進自己的實力以外，也要觀察一下競爭對手在做什麼。於是，他想拜託你寫一個網頁，可以顯示出某個特定遊戲的一些熱門實況，好讓他能夠方便觀察競爭對手。
 
-請串接 [Twitch API](https://dev.twitch.tv/docs/api)，顯示出目前最熱門的 5 個遊戲，點下去之後可以顯示正在直播這遊戲的前 20 個實況（要剛好 20 個）。可以切換不同的遊戲，顯示不同遊戲的熱門實況。
+請串接 [Twitch API](https://dev.twitch.tv/docs/v5)，顯示出目前最熱門的 5 個遊戲，點下去之後可以顯示正在直播這遊戲的前 20 個實況（要剛好 20 個）。可以切換不同的遊戲，顯示不同遊戲的熱門實況。
 
 範例：https://cwenwen.github.io/APIsPractice/Twitch_API/
 
@@ -46,15 +46,17 @@ API 會按照機率回傳不同的獎項名稱，請你針對不同的獎項名�
 
 <details>
   <summary>提示 #1</summary>
-  [Twitch API](https://dev.twitch.tv/docs/v5/) 裡面有一個 API 是可以拿到現在正在直播的某個遊戲底下的資料，API 的描述是「Gets information about active streams. Streams are returned sorted by number of current viewers, in descending order.」，看到這行就代表你找對 API 了。
+
+  [Twitch API](https://dev.twitch.tv/docs/v5/) 裡面有一個 API 可以拿到 Live Streams 的資料，API 的描述是「Gets a list of live streams.」，看到這行就代表你找對 API 了。
 </details>
 
 <details>
   <summary>提示 #2</summary>
-  API 要帶的參數有一個 `game_id` 的欄位，請帶相對應的遊戲 id
+
+  API 要帶的參數有一個 `game` 的欄位，請帶遊戲名稱，還有要記得帶 limit 這個參數
 </details>
 
-附註：Twitch API 有兩個版本，v5 是舊版，這個作業用的是**新版**，請特別留意
+附註：Twitch API 有兩個版本，v5 是舊版，這個作業跟第四週一樣，用的會是**舊版**，請特別留意
 
 
 ## 進階挑戰題
