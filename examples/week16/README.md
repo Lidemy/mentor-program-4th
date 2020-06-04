@@ -1,15 +1,28 @@
-# 注意事項
+# Week16 自我檢討
 
 提示：在寫完作業之後看效果最佳，沒寫作業前請不要看
 
-## Stack 與 Queue
+## Callback queues
 
-這邊其實滿害怕大家把 Stack 與 call stack 搞混，或者是把 Queue 與下週要講的 callback queue 搞混。
+這一週附上的 event loop 影片應該就講的滿清楚的了，但大部分同學都會忽略掉一個小細節。
 
-Stack 與 Queue 是兩種資料結構，就像陣列也是一種資料結構一樣。當我們提到 Stack 跟 Queue 的時候我們知道資料怎麼進出，所以它是一種比較抽象的概念。
+以下面的程式碼為例：
 
-而 Stack 這個後進先出的特性很適合拿來當執行程式時的資料結構，因為就像你 function 呼叫 function 一樣，一定是後面的執行完才跑回來執行前面的，因此底層會利用 Stack 來實作這個呼叫的流程，這個東西就叫做：Call Stack。
+``` js
+setTimeout(() => {
+  console.log('hello')
+}, 0)
+```
 
-所以當有人問你 Stack 是什麼的時候，不要搞混成 Call Stack 了，他想知道的只是這個資料結構在幹嘛而已；當有人問你 Call Stack 的時候，就是想知道你怎麼解釋程式在執行時的底層結構。
+執行流程是什麼？
 
-簡單來說呢，Stack 是一種資料結構，Call Stack 是 Stack 的一種使用方式。
+是先把這整段放到 call stack 裡面去執行，所以才會執行 setTimeout 這個 function。然後 setTimeout 是 web API，呼叫瀏覽器幫忙設定一個 0 ms 後到期的定時器，到期之後就會把第一個參數：`() => {console.log('hello')}` 放進去 callback queues。
+
+這邊最多人誤解的點就是會把 `setTimeout(...)` 整段丟進去 callback queue，不是這樣的，只會把第一個參數丟進去而已。你必須先執行 setTimeout 才能設定計時器，才能把第一個參數丟進去 callback queue。
+
+設定完成以後從 call stack pop 出來，main 也 pop，stack 清空，把 `() => {console.log('hello')}`  丟進去 call stack，執行之後發現這個 function 裡面還要呼叫 `console.log('hello')`，所以把 console.log 丟進去 call stack，印出 hello，pop，然後原本的 function 也沒東西要執行了所以也 pop，stack 清空，結束。
+
+
+## Function expression 的初始化
+
+這邊可以參考我跟同學們的討論：https://github.com/Lidemy/mentor-program-3rd-ClayGao/pull/24

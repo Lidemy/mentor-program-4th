@@ -1,5 +1,7 @@
 # 程式導師實驗計畫第四期
 
+備註：十六週以後的課程尚未完成，作業也還沒決定
+
 ## 這是什麼
 
 [程式導師實驗計畫第四期](https://bootcamp.lidemy.com)是一個為期六個月的計畫，要求學生付出一定的時間（每週至少付出三十小時），希望能在結業時培養出合格的（意思就是找得到工作）的工程師，並且在就職後依舊能持續成長，成為好的工程師。
@@ -461,7 +463,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 ### 第十三週（09/07 ~ 09/13）：現代前端工具
 
-這週基本上是延續上週的課程，介紹期待好用的現代前端工具，包括：
+這週基本上是延續上週的課程，介紹簡單好用的現代前端工具，包括：
 
 1. CSS 預處理器
 2. Gulp
@@ -494,7 +496,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 也會讓大家購買自己的網域，理解如何將網域以及主機串連起來，讓大家可以連線到你的網站。
 
-除此之外，也會提到一些系統架構，還有跟資料庫的一些知識，像是 ACID、Transaction、View 以及 Stored procedure 等等。
+除此之外，也會稍微提到一些系統架構，還有跟資料庫的一些知識，像是 ACID、Transaction、View 以及 Stored procedure 等等。
 
 這週也要特別感謝 [gandi](https://www.gandi.net/) 連續三期全額贊助了網域的費用 <(_ _)>。
 
@@ -513,7 +515,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 然後看看[程式導師實驗計畫第二期：Week8-1 後端基礎（下）](https://www.youtube.com/watch?v=QiCm9JE43KM)來學習什麼是 View、Stored Procedure 與 Trigger（這影片前半段是以前 Todo list 作業的檢討，可以跳過）。
 
-系統架構：[CS75 (Summer 2012) Lecture 9 Scalability Harvard Web Development David Malan](https://www.youtube.com/watch?v=-W9F__D3oY4)
+最後是系統架構，可以稍微看一下：[CS75 (Summer 2012) Lecture 9 Scalability Harvard Web Development David Malan](https://www.youtube.com/watch?v=-W9F__D3oY4)
 
 [HW14 作業連結](/homeworks/week14)
 

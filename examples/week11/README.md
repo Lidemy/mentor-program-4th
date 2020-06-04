@@ -1,6 +1,6 @@
-# 注意事項
+# Week11 作業自我檢討
 
-提示：在寫完作業之後看效果最佳，沒寫作業前請不要看
+## 提示：在寫完作業之後看效果最佳，沒寫作業前請不要看
 
 ## 雜湊跟加密的區別
 
@@ -22,33 +22,148 @@
 
 難嗎？難。
 
-## 來自 client 端的資料都不可信
+更多相關資訊請參考：
 
-大家千萬不要忘記一件事情了，千萬不要忘記什麼是我們可以自己改的，什麼不行。你要站在攻擊者的角度去想什麼東西可以被偽造。
+1. [[資訊安全] 密碼存明碼，怎麼不直接去裸奔算了？淺談 Hash , 用雜湊保護密碼](https://medium.com/@brad61517/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8-%E5%AF%86%E7%A2%BC%E5%AD%98%E6%98%8E%E7%A2%BC-%E6%80%8E%E9%BA%BC%E4%B8%8D%E7%9B%B4%E6%8E%A5%E5%8E%BB%E8%A3%B8%E5%A5%94%E7%AE%97%E4%BA%86-%E6%B7%BA%E8%AB%87-hash-%E7%94%A8%E9%9B%9C%E6%B9%8A%E4%BF%9D%E8%AD%B7%E5%AF%86%E7%A2%BC-d561ad2a7d84)
+2. [一次搞懂密碼學中的三兄弟 — Encode、Encrypt 跟 Hash](https://medium.com/starbugs/what-are-encoding-encrypt-and-hashing-4b03d40e7b0c)
 
-GET 跟 POST 的參數值可不可以被偽造？當然可以！我想傳什麼就傳什麼，本來就沒有限制。
+## 資訊安全的意識
 
-Cookie 的內容可不可以被偽造？當然可以，這也是我想帶什麼就帶什麼。
+這一週的重點就只有這個，沒了。
 
-資料庫的值可不可以被偽造？可以，但如果被偽造的話就代表你資料庫已經被駭客拿下了，所以不用擔心這個問題。
+但光是這一個重點就可以把一大堆人打趴了。
 
-所以為什麼第九週會員系統那樣不 ok？因為我們把會員 id 帶在 cookie，今天只要攻擊者自己改變 cookie 內容（可不可以？當然可以），就可以換一個身份登入，所以是有安全漏洞的。
+資訊安全意識代表的是你在寫 code 的時候會去注意自己的 code 有沒有一些會被攻擊的地方，而這之中最最最常見的就是在處理與使用者相關輸入的時候，都要特別小心。
 
-這也是為什麼這一週要換成通行證機制，比起會員 id，我們隨機產生的通行證 id 是沒辦法被猜到的。那攻擊者可不可以竄改通行證 id？當然可以，他可以自己改變 cookie 的值，可是他要改成什麼？
+只要你能有這個意識，就能防止大多數的攻擊；但如果沒有的話...呵呵。
 
-通行證 id 是隨機產生的，他怎麼可能隨便猜就猜得到一組正確的？
+本週最常見的三個錯誤：
 
-所以在這情景下你不用去考慮什麼「如果他用別人的通行證，不就也可以利用別人的身份登入嗎？」，對啊，當然，但這個機制本來就只認證不認人，用別人的通行證本來就應該用別人的身份登入。
+1. 沒有把所有用到 SQL 的地方都改成 prepared statement
+2. 忘了防止使用者暱稱的 XSS
+3. 沒有做好權限管理，可以刪除與編輯任意文章或是仿冒身份發文
 
-今天的重點是攻擊者沒辦法「拿到別人的通行證」或者是猜到，所以這個機制還是可靠的。
+以下直接來看幾個 case：
 
-有些人作業把通行證的產生規則弄固定了，就是多此一舉。例如說通行證就是 `md5(username)`，一但這個規則被猜到了，我不就也可以產生出別人的通行證嗎？那這機制就沒用了。
+``` php
+<?php 
+    require_once('./conn.php'); 
+    $id = $_GET['id'];
+    $sql = "DELETE FROM  comment where id = ".$id;
+    if ($conn->query($sql)) {
+        header("Location: ./index.php");
+    } else {
+        die("failed.");
+    }
+?>
+```
 
-所以我才強調要隨機產生，隨機就代表猜不到（精確一點的說法是很難猜啦，例如說機率是兩億分之一，就可以想成猜不到）
+問題是什麼？
 
-然後，這個通行證機制就叫做 Session。
+第一個問題是沒有判斷權限，這邊只接收一個 GET 的參數然後就把留言給刪了。今天儘管我沒有登入，我還是可以刪除留言。
 
-Session 就是把資料存在 server，然後靠著一組 session id 傳到 cookie 存起來，以後都透過這個 session id 認人。所以 session 就是通行證機制，session 就是通行證本身，就是你的專屬會員卡。
+改一下之後變成這樣：
+
+``` php
+<?php 
+    require_once('./conn.php'); 
+    require_once('./check_login.php');
+    if (!$username) {
+        die('not login');
+    }
+    $id = $_GET['id'];
+    $sql = "DELETE FROM  comment where id = ".$id;
+    if ($conn->query($sql)) {
+        header("Location: ./index.php");
+    } else {
+        die("failed.");
+    }
+?>
+```
+
+好，這樣沒有登入的話就沒辦法刪除留言了。
+
+夠了嗎？當然不夠，雖然有檢查登入但沒有檢查作者，意思就是我可以刪除任何人的留言，因為你後端沒做檢查。所以後端要記得檢查「這個留言是不是他的」，不然攻擊者就可以刪除任何人的留言了。
+
+這邊最簡單的方法就是直接改 SQL query：
+
+``` php
+<?php 
+    require_once('./conn.php'); 
+    require_once('./check_login.php');
+    if (!$username) {
+        die('not login');
+    }
+    $id = $_GET['id'];
+    $sql = "DELETE FROM  comment where id = ".$id." AND username='" + $username + "'";
+    if ($conn->query($sql)) {
+        header("Location: ./index.php");
+    } else {
+        die("failed.");
+    }
+?>
+```
+
+要同時符合文章 id 跟作者，就能確保只有作者本人可以刪到文章。
+
+這樣夠了嗎？還不夠，你忘記 SQL Injection 了嗎？我 username 如果傳一個 `' or '1'='1` 之類的，SQL query 就變成 `DELETE FROM comment where id = xx AND username='' or '1'='1'`，就一樣可以刪除任何文章了。
+
+所以要把上面的 query 換成 prepared statement，這樣才沒問題。
+
+接著來看第二個 case，cookie 裡面存的是這一週作業要大家實作的 certificate：
+
+``` php
+<?php 
+    include_once('./conn.php');
+    if(isset($_COOKIE["user"]) && !empty($_COOKIE["user"])){
+        $token = $_COOKIE["user"];
+        $sql= 
+        "SELECT u.nickname ,c.id, c.username 
+        FROM certificate as c
+        JOIN users as u
+        ON c.username = u.username 
+        where c.id = '$token'";
+        $result = $conn->query($sql);
+        if(!$result || $result->num_rows <=0){
+            $user = null;
+        }else {
+            $row = $result->fetch_assoc();
+            $user = $row['nickname'];
+        }
+    }else{
+        $user = null;
+    }
+
+    function isLogin() {
+        if (isset($_COOKIE["user"]) && !empty($_COOKIE["user"])) {
+            return true;
+        } else{
+            return false;
+        }
+    }
+?>
+```
+
+第一個問題是什麼？
+
+跟上面一樣，SQL Injection，我如果改 Cookie 的值，就可以去操縱裡面那一個 query，就可以用任何人的身份登入了。
+
+第二個問題跟資安無關，是邏輯問題。上面是用 cookie 存不存在來判斷是否登入，但這是錯的。如果我 cookie 隨便放個 123，我也叫登入嗎？當然不是，登入代表的是我要有一個合法的帳號才叫登入。
+
+所以正確的檢驗方法是拿 cookie 裡面的值去 certificates 裡面查詢，有查到資料才代表我真的有登入。不然通行證機制都白做了。
+
+在這邊提醒大家兩件事：
+
+1. 永遠記得權限驗證，做任何操作時都要想一下有沒有人可以繞過權限驗證（或你根本忘記做權限驗證）
+2. 永遠使用 prepared statement。你可能會說：「可是有些地方沒有參數，或有些地方參數是我自己能控制的」，對，這些地方可能不會有 SQL Injection 的風險，但第一如果你之後改那段 code 呢？第二，你怎麼知道那邊不會有？
+
+上面舉的那些範例也可能是自認為沒有 SQL Injection 的風險，但這才是最致命的地方。不要為了偷懶用回比較方便的 query，只要有用到 SQL 的地方，全部都用 prepared statement 才是正解。
+
+補充：
+
+XSS 的部分除了留言內容，使用者暱稱也要防啊！不確定的話你就每個輸出的地方都 escape 就好，千萬不要自作聰明！
+
+另外，這邊有 SQL Injection 的真實範例：https://www.youtube.com/watch?v=ABi1jUbDzPg&feature=youtu.be
 
 ## 用最適合的東西
 
@@ -166,6 +281,4 @@ $conn->close();
 原本三層 if 的程式碼，在換個順序判斷之後就改成只有一層，程式碼看起來乾淨很多。這個就叫做 early return，能早點 return（在這情形下是 exit，但也是離開）就早點，就可以避免掉無謂的 else 判斷。
 
 （上面 code 來自同學的真實案例，可參考：https://github.com/Lidemy/mentor-program-3rd-ChihYang41/pull/28/files/c09007e1b0c8f2f54662cbbb7e1bb90eebcd6e2b ）
-
-
 
