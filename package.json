@@ -1,5 +1,5 @@
 {
-  "name": "mentor-program-3rd",
+  "name": "mentor-program-4th",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -19,16 +19,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aszx87410/program-3rd.git"
+    "url": "git+https://github.com/Lidemy/mentor-program-4th.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aszx87410/program-3rd/issues"
+    "url": "https://github.com/Lidemy/mentor-program-4th/issues"
   },
-  "homepage": "https://github.com/aszx87410/program-3rd#readme",
+  "homepage": "https://github.com/Lidemy/mentor-program-4th#readme",
   "dependencies": {
-    "eslint": "^5.15.1"
+    
   },
   "devDependencies": {
     "eslint": "^5.15.1",
