@@ -292,6 +292,8 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. [CSS Diner](https://flukeout.github.io/)
 2. [Flexbox Froggy](http://flexboxfroggy.com/)
 
+如果你覺得切版講得很爛，可以參考看看這個：[金魚都能懂的網頁設計入門 - 金魚都能懂了你還怕學不會嗎](https://ithelp.ithome.com.tw/users/20112550/ironman/2072)
+
 [HW6 作業連結](/homeworks/week6)
 
 #### 自我檢測
