@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>餐廳官網</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+  <style>
+
+    .navbar {
+      box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+
+    }
+    .navbar .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 84px;
+      background: white;
+      padding: 0px 20px;
+    }
+
+    .navbar__site-name {
+      color: #489846;
+      font-size: 36px;
+    }
+
+    .navbar__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      font-size: 18px;
+    }
+
+    .navbar__list li {
+      margin-left: 12px;
+      border-radius: 8px;
+      transition: background 0.1s;
+    }
+
+    .navbar__list li.active, .navbar__list li:hover {
+      background: #ff7286;
+    }
+
+    .navbar__list li.active a,
+    .navbar__list li:hover a {
+      color: white;
+    }
+
+    .navbar__list li a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      padding: 12px 24px;
+    }
+
+    .wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0px 12px;
+    }
+
+    .banner {
+      position: relative;
+      height: 450px;
+      background: url(bg.jpg) center/cover no-repeat;
+    }
+
+    .banner:after {
+      content: "";
+      position: absolute;
+      background: rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .banner h1 {
+      display: inline-block;
+      position: relative;
+      margin: 0;
+      color: white;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 60px;
+      font-weight: bold;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .section {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .section__title {
+      display: inline-block;
+      font-size: 36px;
+      border-left: solid 15px #a3dea2;
+      padding-left: 16px;
+      margin-bottom: 36px;
+    }
+
+    .section__desc {
+      font-size: 16px;
+      line-height: 2em;
+      margin: 0px 0px 68px 0px;
+    }
+
+    .button {
+      padding: 60px 80px;
+      font-size: 36px;
+      color: #3e613d;
+      display: inline-block;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .btn-order {
+      background: #a8e8e1;
+    }
+
+    .btn-query {
+      margin-left: 23px;
+      background: #f9f9b5;
+    }
+
+    .section__images {
+      display: flex;
+    }
+
+    .section__images div {
+      width: 25%;
+    }
+
+    .section__images img {
+      width: 100%;
+    }
+
+    footer {
+      margin-top: 48px;
+    }
+
+    .footer__bottom {
+      background: #35564b;
+      padding: 12px;
+      text-align: center;
+      color: white;
+      font-size: 16px;
+    }
+
+    .footer__top {
+      background: #e8efee;
+      padding: 32px;
+      color: #484848;
+    }
+
+    .footer__top .wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer__info {
+      margin-right: 16px;
+    }
+
+    .footer__info div + div {
+      margin-top: 10px;
+    }
+
+    .footer__site {
+      font-size: 36px;
+      color: #489846;
+    }
+
+    .section__comments {
+      display: flex;
+      margin-top: 72px;
+    }
+
+    .comment {
+      border-radius: 5px;
+      box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+      border: solid 1px #c7e5ec;
+      height: 220px;
+      padding: 16px;
+      position: relative;
+    }
+
+    .comment + .comment {
+      margin-left: 16px;
+    }
+
+    .comment__avatar {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .comment__avatar img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .comment__author {
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .comment__author p {
+      margin-top: 5px;
+      line-height: 18px;
+    }
+
+    .comment__content {
+      position: relative;
+      top: 40%;
+      line-height: 1.5em;
+    }
+
+    .faq-block {
+      margin: 0 auto;
+      max-width: 768px;
+    }
+
+    .faq-item {
+      display: flex;
+      text-align: left;
+      padding-bottom: 24px;
+      border-bottom: solid 1px #a6e2c0;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .faq-item:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    .faq-item__number {
+      color: #70b282;
+      font-size: 24px;
+      margin-right: 16px;
+      line-height: 24px;
+    }
+
+    .faq-item__content h2 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: normal;
+      line-height: 24px;
+    }
+
+    .faq-item__content p {
+      font-size: 16px;
+    }
+
+    .faq-item--hide {
+      height: 15px;
+    }
+
+    @media(max-width: 768px) {
+      .navbar .wrapper {
+        height: 120px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0px;
+      }
+
+      .navbar__site-name {
+        margin-top: 10px;
+      }
+
+      .navbar__list {
+        display: flex;
+        width: 100%;
+      }
+
+      .navbar__list li {
+        flex: 1;
+        margin-left: 0;
+        border-radius: 0;
+        text-align: center;
+      }
+
+      .btn-query {
+        margin-left: 0;
+        margin-top: 16px;
+      }
+
+      .section__images {
+        flex-direction: column;
+
+      }
+
+      .section__images div {
+        width: 100%;
+      }
+
+      .footer__top .wrapper {
+        flex-direction: column-reverse;
+      }
+
+      .footer__info {
+        margin-right: 0;
+        margin-top: 16px;
+      }
+
+      .section__comments {
+        flex-direction: column;
+      }
+
+      .comment + .comment {
+        margin-left: 0;
+        margin-top: 82px;
+      }
+    }
+
+   
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="wrapper">
+      <div class="navbar__site-name">
+        Just A Bite!
+      </div>
+      <ul class="navbar__list">
+        <li><a href="#">抽個大獎</a></li>
+        <li><a href="#">我要點餐</a></li>
+        <li><a href="#">查詢訂單</a></li>
+        <li class="active"><a href="#">常見問題</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="wrapper">
+    <section class="section">
+      <h2 class="section__title">
+        FAQ - 常見問題
+      </h2>
+
+      <div class="faq-block">
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q0:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q1:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q2:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q3:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q4:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer__top">
+      <div class="wrapper">
+        <div class="footer__info">
+          <div>餐館地址: 天上地下天堂路三分之一里六段520號</div>
+          <div>訂位專線：02-1314-5566</div>
+          <div>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+          <div>email：service@justabite.com.tw</div>
+        </div>
+        <div>
+          <div class="footer__site">Just A Bite!</div>
+          <div>Facebook / Instagram / YouTube</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
+    </div>
+  </footer>
+  <script>
+      document
+        .querySelector('.faq-block')
+        .addEventListener('click', function(e) {
+          const element = closest(e.target, 'faq-item')
+          if (element) {
+            element.classList.toggle('faq-item--hide')
+          }
+        })
+
+      function closestRecursive(node, className) {
+        if (!node || !node.classList) return null
+        if(node.classList.contains(className)) {
+          return node
+        }
+        return closestRecursive(node.parentNode, className)
+      }
+
+      function closest(node, className) {
+        while(node && node.classList) {
+          if (node.classList.contains(className)) {
+            return node
+          }
+          node = node.parentNode
+        }
+      }      
+  </script>
+</body>
+</html>
