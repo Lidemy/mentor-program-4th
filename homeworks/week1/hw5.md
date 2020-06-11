@@ -26,7 +26,7 @@ nl|顯示行號及對應的內容|`nl <file>`
 head|擷取資料（從頭開始），-n 的 n 表示擷取的行數|`head -n <file>`
 tail|擷取資料（從尾開始），-n 的 n 表示擷取的行數|`tail -n <file>`
 
-head 跟 tail 與可以搭配 pipe 擷取某段資料
+備註：head 跟 tail 與可以搭配 pipe 擷取某段資料
 
 ---
 參考資料：[鳥哥的 Linux 私房菜](http://linux.vbird.org/linux_basic/0220filemanager.php#file)
