@@ -1,9 +1,5 @@
 # Week8 作業參考解答
 
-## 第一題獎項機率
+請參考 Lidemy 上的影片，有 live coding 示範。
 
-first 5%  
-second 20%  
-third 30%  
-none 40%  
-error 5%  
+挑戰題機率部分請參考 [challenge.md](./challenge.md)
