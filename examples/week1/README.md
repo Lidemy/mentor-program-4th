@@ -9,7 +9,7 @@
 3. 寫作業
 4. 如果有新增的檔案，記得加進去 git： `git add .`
 5. 提交改動：`git commit -am "hw1"`
-6. 推到 GitHub：`git push origin master`
+6. 推到 GitHub：`git push origin hw1`
 7. 到自己的 repo 去，並且發起 PR（Pull Request）
 8. 把 PR 的連結複製起來，並且在學習系統上繳交作業
 
