@@ -4,9 +4,9 @@
 
 圖片範例：
 
-![](p1.png)
-
 ![](p2.png)
+
+![](p1.png)
 
 設計稿：https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eaba473e21be61d702230b2
 

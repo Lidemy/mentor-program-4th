@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Todo List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+
+  <style>
+      .wrapper {
+        max-width: 500px;
+        border: 1px solid black;
+        margin: 0 auto;
+        padding: 32px;
+      }
+
+      .todo {
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+        padding: 12px;
+      }
+
+      .todo:hover {
+        background: rgba(0,0,0,0.2);
+      }
+
+      .todo__title {
+        flex: 1;
+      }
+
+      .todo__check {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
+
+      .todo.done .todo__title {
+        text-decoration: line-through;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <input class="input-todo" type="text" /><button class="btn-new">新增</button>
+    <div class="todos">
+    </div>
+  </div>
+  <script>
+    document.querySelector('.btn-new').addEventListener('click', () => {
+      const value = document.querySelector('.input-todo').value;
+      if (!value) return
+      const div = document.createElement('div')
+      div.classList.add('todo')
+      div.innerHTML = `
+        <input class="todo__check" type="checkbox" />
+        <div class="todo__title">${escapeHtml(value)}</div>
+        <button class="btn-delete">刪除</button>
+      `
+      document.querySelector('.todos').appendChild(div)
+      document.querySelector('.input-todo').value = ''
+    })
+
+    // event delegation / proxy
+    document.querySelector('.todos').addEventListener('click', (event) => {
+      const { target } = event
+      // delete todo
+      if (target.classList.contains('btn-delete')) {
+        target.parentNode.remove()
+        return
+      }
+
+      // check/uncheck todo
+      if (target.classList.contains('todo__check')) {
+        if (target.checked) {
+          target.parentNode.classList.add('done')
+        } else {
+          target.parentNode.classList.remove('done')
+        }
+      }
+    })
+
+    function escapeHtml(unsafe) {
+      return unsafe
+           .replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/"/g, "&quot;")
+           .replace(/'/g, "&#039;");
+    }
+
+  </script>
+</body>
+</html>
