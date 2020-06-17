@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>餐廳官網</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="wrapper">
+      <div class="navbar__site-name">
+        <a href="index.html">Just A Bite!</a>
+      </div>
+      <ul class="navbar__list">
+        <li class="active"><a href="lottery.html">抽個大獎</a></li>
+        <li><a href="#">我要點餐</a></li>
+        <li><a href="#">查詢訂單</a></li>
+        <li><a href="faq.html">常見問題</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <section class="section-lottery">
+    <div class="lottery-info">
+      <div class="lottery-info__title">
+          2020 夏日輕盈特賞！ 抽獎活動辦法
+      </div>
+      <div class="lottery-info__detail">
+        <div class="lottery-info__detail-title">
+            活動期間：
+        </div>
+        <div class="lottery-info__detail-content">
+            2020/06/01~2020/07/01
+        </div>
+      </div>
+      <div class="lottery-info__detail">
+        <div class="lottery-info__detail-title">
+            活動說明：
+        </div>
+        <div class="lottery-info__detail-content">
+            今天老闆佛心來著決定給大家發獎勵，有看有機會，沒看只能幫QQ！只要在店內消費滿1000000元即有機會獲得 - 頭獎日本東京來回雙人遊！
+        </div>
+      </div>
+      <div class="lottery-info__detail">
+        <div class="lottery-info__detail-title">
+            獎  品：
+        </div>
+        <div class="lottery-info__detail-content">
+            ❤ 頭獎一名：日本東京來回雙人遊(市價14990元)<br>
+            ❤ 貳獎三名：90 吋電視一台(市價5990元)<br>
+            ❤ 參獎十名：知名 YouTuber 簽名握手會入場券一張(市價1500元)<br>
+        </div>
+      </div>
+      <div class="lottery-info__btn">
+          我要抽獎
+      </div>
+    </div>
+    <div class="lottery-result hide">
+      <h2 class="lottery-result__title">恭喜你中頭獎了！日本東京來回雙人遊！</h2> 
+      <div class="lottery-result__btn" onclick="javascript:window.location.reload()">
+          我要抽獎
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer__top">
+      <div class="wrapper">
+        <div class="footer__info">
+          <div>餐館地址: 天上地下天堂路三分之一里六段520號</div>
+          <div>訂位專線：02-1314-5566</div>
+          <div>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+          <div>email：service@justabite.com.tw</div>
+        </div>
+        <div>
+          <div class="footer__site">Just A Bite!</div>
+          <div>Facebook / Instagram / YouTube</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
+    </div>
+  </footer>
+  <script>
+    const apiUrl = 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery'
+    const errorMessage = '系統不穩定，請再試一次'
+
+    // 抽獎
+    function getPrize(cb) {
+      let xhr = new XMLHttpRequest()
+      xhr.open('GET', apiUrl, true)
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          let data
+          try {
+            data = JSON.parse(xhr.response)
+          } catch(err) {
+            cb(errorMessage)
+            return
+          }
+
+          if (!data.prize) {
+            cb(errorMessage)
+            return
+          }
+
+          cb(null, data)
+        } else {
+          // 講解的時候忘了補這一段
+          cb(errorMessage)
+        }
+      }
+      xhr.onerror = function() {
+        cb(errorMessage)
+      }
+      xhr.send()
+    }
+
+    document.querySelector('.lottery-info__btn').addEventListener('click', () => {
+      getPrize(function(err, data) {
+        if (err) {
+          alert(err)
+          return
+        }
+
+        const prizes = {
+          FIRST: {
+            className: 'first-prize',
+            title: '恭喜你中頭獎了！日本東京來回雙人遊！'
+          },
+          SECOND: {
+            className: 'second-prize',
+            title: '二獎！90 吋電視一台！'
+          },
+          THIRD: {
+            className: 'third-prize',
+            title: '恭喜你抽中三獎：知名 YouTuber 簽名握手會入場券一張，bang！'
+          },
+          NONE: {
+            className: 'none-prize',
+            title: '銘謝惠顧'
+          }
+        }
+        const { className, title } = prizes[data.prize]
+        document.querySelector('.section-lottery').classList.add(className)
+        document.querySelector('.lottery-result__title').innerText = title
+        document.querySelector('.lottery-info').classList.add('hide')
+        document.querySelector('.lottery-result').classList.remove('hide')
+
+      })
+    })
+
+
+  </script>
+</body>
+</html>
