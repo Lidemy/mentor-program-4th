@@ -29,3 +29,28 @@
 ### 平行時空branch
 
 在兩條 branch 上可以平行同時做開發。一邊 debug 一邊做新功能開發，並可將兩個 branch 做合併 merge。
+
+* git branch - v：會得到 master 這個分支
+* git branch new feature：開一個叫 new feature 的分支
+* git bransh - d new-feature：刪掉 new feature 這個分支。d 亦為 delete。
+
+### 切換分支
+
+* git checkout branch-A：切換到 branch-A 。
+
+### 合併分支
+
+* git merge new-feature：把 new-feature 合併進來，new-feature 是被動被合併進去。
+
+### 介紹 Push 指令
+目的：最新版本推到遠端
+
+1. 先完成檔案加入git，使用指令：git commit -am ooo
+2. 把檔案推到 Github 的master branch ，使用指令：git push origin master
+
+### 介紹 Pull 指令
+
+可使用 pull 指令來拉檔案到本地做同步。 
+使用指令：git pull origin master
+
+＊有可能會遇到衝突 conflict 就一樣以手動解決。 
