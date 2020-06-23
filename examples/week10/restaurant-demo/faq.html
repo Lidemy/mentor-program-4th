@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>餐廳官網</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="wrapper">
+      <div class="navbar__site-name">
+        <a href="index.html">Just A Bite!</a>
+      </div>
+      <ul class="navbar__list">
+        <li><a href="lottery.html">抽個大獎</a></li>
+        <li><a href="#">我要點餐</a></li>
+        <li><a href="#">查詢訂單</a></li>
+        <li class="active"><a href="faq.html">常見問題</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="wrapper main-wrapper">
+    <section class="section">
+      <h2 class="section__title">
+        FAQ - 常見問題
+      </h2>
+
+      <div class="faq-block">
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q0:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q1:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q2:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q3:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+        <div class="faq-item faq-item--hide">
+          <div class='faq-item__number'>
+            Q4:
+          </div>
+          <div class="faq-item__content">
+            <h2>如何辦理退貨</h2>
+            <p>線上刷卡的使用方式也超簡單，只要您確認您當次的購物清單與金額都無誤，就可立即到匯款上傳系統，登入個人帳號密碼後，點選"線上刷卡方式"，確認收件住址後，再進行刷卡確認程序即可～</p>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer__top">
+      <div class="wrapper">
+        <div class="footer__info">
+          <div>餐館地址: 天上地下天堂路三分之一里六段520號</div>
+          <div>訂位專線：02-1314-5566</div>
+          <div>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+          <div>email：service@justabite.com.tw</div>
+        </div>
+        <div>
+          <div class="footer__site">Just A Bite!</div>
+          <div>Facebook / Instagram / YouTube</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
+    </div>
+  </footer>
+  <script>
+      document
+        .querySelector('.faq-block')
+        .addEventListener('click', function(e) {
+          const element = closest(e.target, 'faq-item')
+          if (element) {
+            element.classList.toggle('faq-item--hide')
+          }
+        })
+
+      function closestRecursive(node, className) {
+        if (!node || !node.classList) return null
+        if(node.classList.contains(className)) {
+          return node
+        }
+        return closestRecursive(node.parentNode, className)
+      }
+
+      function closest(node, className) {
+        while(node && node.classList) {
+          if (node.classList.contains(className)) {
+            return node
+          }
+          node = node.parentNode
+        }
+      }      
+  </script>
+</body>
+</html>
