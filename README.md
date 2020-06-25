@@ -172,6 +172,8 @@ Mindset 建立：
 
 [ALG101] 先別急著寫 leetcode 這堂課則是為了繼續加強程式基礎以及練習程式思維，把上面 JS101 指定章節看完以後可以看 ALG101，看到 Unit4 就行了。
 
+然後可以看這篇：[從博物館寄物櫃理解變數儲存模型](https://medium.com/@hulitw/variable-and-frontdesk-a53a0440af3c)
+
 若是想要繼續研究演算法相關的議題，可以看 [CS101] 初心者的計概與 coding 火球術的 7-1 ~ 7-4，但如果前面的影片看完時間就差不多了，可以留到以後再看。
 
 [HW2 作業連結](/homeworks/week2)
