@@ -2,11 +2,108 @@
 
 請注意，這週沒有自我檢討，因為交作業前就已經跟大家說過，要拿到 AC 才能交作業。拿到 AC 代表答案是對的，所以不需要特別改什麼。
 
-底下就直接進入參考解答。
-
 挑戰題的部分請去別的檔案觀看。
 
-### hw1：好多星星
+底下我先補充幾個重點。
+
+## return 與 console.log
+
+以判斷質數那一題來說，你可以這樣寫：
+
+``` js
+function solve(lines){
+  for(let i=1; i<lines.length; i++) {
+    logPrime(Number(lines[i]));
+  }
+}
+
+function logPrime(n) {
+  if (n === 1) {
+    console.log('Composite');
+  }
+  const num = Math.sqrt(n);
+  for (let i = 2; i <= num; i++) {
+    if (n % i === 0) {
+      console.log('Composite');
+    }
+  }
+  console.log('Prime')
+}
+```
+
+看起來沒什麼問題吧？不，問題可大了。
+
+問題就在於，你的這段程式沒辦法重複使用。為什麼呢？假設你今天有另外一個程式也需要判斷質數的功能，你可能會想把程式碼複製貼上。但你會發現有一個問題，那就是 `logPrime` 這個函式其實「並不會回傳判斷的結果」。
+
+你可能會說：「咦？不是有嗎？不是印出來了嗎？」
+
+印出跟回傳是完完全全不同的兩件事！
+
+印出來是印出來啊，但如果我不想要印出來怎麼辦？我只是需要知道一個數字「是不是質數」，不代表我要把它印出來。舉個例子，我想做一個程式是如果一個數字是質數，我就不管它；不是質數的話，我就要把它的因數都印出來，那我用 `logPrime` 怎麼做到？
+
+做不到，除非我去改裡面程式碼。所以這就是我上面說的：「這段程式沒辦法重複使用」。
+
+接著我們來看看參考解答：
+
+``` js
+function solve(lines){
+  for(let i=1; i<lines.length; i++) {
+    // 重點是這行
+    console.log(isPrime(Number(lines[i])) ? 'Prime' : 'Composite')
+  }
+}
+
+function isPrime(n) {
+  if (n === 1) return false;
+  const num = Math.sqrt(n);
+  for (let i = 2; i <= num; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+```
+
+我們寫了一個 `isPrime` 的函式，如果傳進去的數字是質數，就會回傳 true，反之則是 false。承接上面那個範例，如果今天要寫一個不是質數就把因數全部印出來的程式，我們可以重用這個 `isPrime` 的函式嗎？
+
+當然可以！
+
+因為這個函式把結果回傳回來，我們可以根據那個結果來做事，例如說：
+
+``` js
+for(let i=1; i<lines.length; i++) {
+  if (isPrime(Number(lines[i]))) {
+    // do something
+  } else {
+    // do something
+  }
+}
+```
+
+所以請特別注意一件事情，那就是在函式裡面，不會透過「console.log」來回傳結果，而是透過 return。所以最好的寫法就是像我這樣分開，功能歸功能，log 歸 log，才會讓這個 function 可以重複使用。
+
+## 變數命名：語意
+
+上一週有提過變數命名的語意很重要，函式其實也是一樣。
+
+如同我上面寫的，你有沒有看到我的函式名稱叫做：`isPrime`？通常 `is` 開頭的函式就代表：「這個函式只會回傳 true 或是 false」，例如說 week2 的 `isNarcissistic` 也是一樣。
+
+這個就叫做語意，光看 `Narcissistic` 或是 `Narc` 你一定不懂他在幹嘛，但是看：`isNarcissistic` 就知道他是在判斷一個東西，然後會回傳 boolean。
+
+不過這次強調，這是慣例，不是規則。
+
+你可以把函式名稱叫做 `isNarcissistic`，但卻不回傳東西，或是回傳字串，這都是可以的，但都是不應該做的事，因為這樣只會混淆看程式碼的人（還有自己）。
+
+然後再提醒一下上週講過的命名慣例，一律使用小寫開頭的 camel case 來命名。
+
+## 型態
+
+這週一定有很多人因為型態吃到苦頭，所以再次提醒大家型態的重要性。
+
+尤其是字串跟數字，當你搞不清楚又不知道 == 與 === 的差別時，就很容易出錯。所以在寫程式的時候請務必知道每一個變數的型態是什麼。
+
+## hw1：好多星星
 
 比較平易近人的解法：
 
@@ -34,7 +131,7 @@ function solve(lines){
 }
 ```
 
-### hw2：水仙花數
+## hw2：水仙花數
 
 可以參考 ALG101 課程中的解法：https://github.com/Lidemy/ALG101-too-weak-to-leetcode/blob/master/unit4/examples/1025.js
 
@@ -96,7 +193,7 @@ function isNstr(n) {
 }
 ```
 
-### hw3：判斷質數
+## hw3：判斷質數
 
 可以利用上一週學過的找因數，直接回傳因數數目是否等於 2 即可，但數字 1 要額外做處理。
 
@@ -125,7 +222,7 @@ function isPrime(n) {
 }
 ```
 
-### hw4：判斷迴文
+## hw4：判斷迴文
 
 把字串拿去跟 reverse 之後的比較，看是不是一樣即可。
 
@@ -157,27 +254,11 @@ function solve(lines) {
 }
 ```
 
-### hw5：聯誼順序比大小
+## hw5：聯誼順序比大小
 
-這題要注意的是題目範圍，因為數字太大，所以用 JS Number 會出問題。因此要自己用字串實作判斷的邏輯，或者是用新的資料型態 BigInt。
+這題要注意的是題目範圍，因為數字太大，所以用 JS Number 會出問題，一個很大的數字被轉成 Number 之後會變成無限大（Infinity），所以比較大小就失去作用了。
 
-``` js
-function solve(lines) {
-  let m = Number(lines[0])
-  for(let i=1;i<=m; i++){
-    let [a, b, p] = lines[i].split(' ')
-    if (BigInt(a) === BigInt(b)) {
-      console.log('DRAW')
-    } else if ((BigInt(a) > BigInt(b) && p == 1) || (BigInt(a) < BigInt(b) && p == -1) ) {
-      console.log('A')
-    } else {
-      console.log('B')
-    }
-  }
-}
-```
-
-自己實作比對邏輯就會變這樣：
+因此要自己用字串實作判斷的邏輯：
 
 ``` js
 function compare(a, b, p) {
@@ -239,5 +320,23 @@ function compare(a, b, p) {
       return lengthA > lengthB ? "A" : "B"
   }
   return a > b ? 'A' : 'B'
+}
+```
+
+或是你也可以用比較新的資料型態：BigInt 去解這題，但建議大家試著不要用這個來解解看：
+
+``` js
+function solve(lines) {
+  let m = Number(lines[0])
+  for(let i=1;i<=m; i++){
+    let [a, b, p] = lines[i].split(' ')
+    if (BigInt(a) === BigInt(b)) {
+      console.log('DRAW')
+    } else if ((BigInt(a) > BigInt(b) && p == 1) || (BigInt(a) < BigInt(b) && p == -1) ) {
+      console.log('A')
+    } else {
+      console.log('B')
+    }
+  }
 }
 ```
