@@ -1,3 +1,5 @@
+// 備註：這個程式碼還需要別的東西才能跑，因為 Twitch API 規則有變
+// 所以基本上只是讓大家看個概念而已，概念絕對是相通的，可以自己換成舊的 API 試試看
 const request = require('request');
 
 const BATCH_LIMIT = 4;

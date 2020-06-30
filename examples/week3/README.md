@@ -103,6 +103,143 @@ for(let i=1; i<lines.length; i++) {
 
 尤其是字串跟數字，當你搞不清楚又不知道 == 與 === 的差別時，就很容易出錯。所以在寫程式的時候請務必知道每一個變數的型態是什麼。
 
+## early return
+
+這週大家在寫作業時，應該會發現有個 eslint 的規則叫做：[no-else-return](https://eslint.org/docs/rules/no-else-return)，這個第 11 週會再提到一次，但沒關係我這邊就先講了。
+
+有些人在寫程式的時候，畢竟是初學者嘛，會很習慣以：if...else 的模式去思考，這個很正常。以判斷質數為例，可能會是這樣：
+
+``` js
+function isPrime(n) {
+  if (n === 1) {
+    return false
+  } else {
+    for (let i = 2; i < n; i++) {
+      if (n % i === 0) return false;
+    }
+    return true;
+  }  
+}
+```
+
+看起來十分合理，但是 eslint 會不給過，原因上面有提到了，是一個叫做 no-else-return 的規則。這個是來幹嘛的呢？首先，你看看上面的程式碼，如果 n 是 1 的話，就會直接 return false 對吧？
+
+函式一旦 return 就結束執行了，所以如果 n 不是 1 的話才會繼續往下執行。所以呢，把 else 拿掉，其實邏輯是一模一樣的：
+
+``` js
+function isPrime(n) {
+  if (n === 1) {
+    return false
+  }
+
+  // 會跑到這邊，代表 n 一定不是 1
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) return false;
+  }
+  return true; 
+}
+```
+
+拿掉之後的好處是什麼？好處就是你的程式碼的「層級」變低了。你可以簡單想成就是縮排變少了，大括號也變少了，這樣其實在看程式碼的時候是非常有幫助的，尤其是程式碼一多的時候。
+
+舉另外一個 hw5 的程式碼為例（改寫自其他同學）：
+
+``` js
+if (K === '1') {
+  if (arr1.length === arr2.length) {
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return arr1[i] > arr2[i] ? 'A' : 'B';
+      }
+    }
+  } else {
+    return arr1.length > arr2.length ? 'A' : 'B';
+  }
+} else {
+  return false;
+}
+```
+
+在寫程式的時候有個技巧叫做：early return，意思就是能夠儘早把結果傳回去，就趕快傳回去，可以省掉很多不必要的判斷，也可以讓我們在看程式碼的時候順暢許多。你想想看，如果你的 if 到了三四層，會不會看一看就忘記這一層在判斷什麼？例如說：
+
+``` js
+if (..) {
+  if (...) {
+    if (..) {
+
+    } else {
+
+    }
+  } else {
+  }
+} else {
+
+}
+```
+
+我光看了就頭痛...
+
+但很多情形之下，你其實可以想辦法把這些 if else 壓平，變這樣：
+
+``` js
+if (...) {
+  return xxx
+}
+
+if (...) {
+  return xx
+}
+
+if (...) {
+  return xxx
+}
+
+return xxx
+```
+
+這樣程式碼就會變得可讀性高很多。所以上面那個範例：
+
+``` js
+if (K === '1') {
+  if (arr1.length === arr2.length) {
+    for (let i = 0; i < arr1.length; i++) {
+      if (arr1[i] !== arr2[i]) {
+        return arr1[i] > arr2[i] ? 'A' : 'B';
+      }
+    }
+  } else {
+    return arr1.length > arr2.length ? 'A' : 'B';
+  }
+} else {
+  return false;
+}
+```
+
+改完之後可以變這樣：
+
+``` js
+// 條件反過來寫，就可以先 return，底下就不用接 else
+if (K !== '1') {
+  return false
+}
+
+// 這也是，先 return
+if (arr1.length !== arr2.length) {
+  return arr1.length > arr2.length ? 'A' : 'B';
+}
+
+// 最後才做要做比較多事情的段落
+for (let i = 0; i < arr1.length; i++) {
+  if (arr1[i] !== arr2[i]) {
+    return arr1[i] > arr2[i] ? 'A' : 'B';
+  }
+}
+```
+
+有發現差別了嗎？這兩個的邏輯其實一模一樣，而前者有很多巢狀的 if else，多層之後其實很難去看，但是後者換一個寫法，就少了很多層，程式碼就可以順順地看下去。
+
+像這種 return 後面不接 else 其實是個非常常見而且很不錯的做法，只是大家可能剛開始不習慣，之後就會慢慢習慣了。
+
 ## hw1：好多星星
 
 比較平易近人的解法：
