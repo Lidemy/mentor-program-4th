@@ -29,7 +29,7 @@ request.patch = function({ url, form }, callback) {
   sendRequest(url, {
     method: 'PATCH',
     data: form,
-  }, callback);
+  }, callback)
 }
 
 // 附註：這個方法目前對於 POST 跟 PATCH 只支援 json 格式的輸入
