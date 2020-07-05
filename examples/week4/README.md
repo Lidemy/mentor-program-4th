@@ -1,5 +1,212 @@
 # Week4 作業自我檢討
 
+本週範例請參考其他檔案
+
+## race condition
+
+（這一段要講的觀念超級無敵重要，不懂的話請在 slack 提問）
+
+請問底下程式碼的輸出會是什麼？  
+（程式碼在 `./race-condition.js`）
+
+``` js
+const request = require('request');
+const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com';
+
+request(`${API_ENDPOINT}/books/1`, (err, res, body) => {
+  console.log('1', body)
+})
+
+request(`${API_ENDPOINT}/books/2`, (err, res, body) => {
+  console.log('2', body)
+})
+```
+
+> 很簡單啊，不就是先輸出 id 是 1 的內容，再輸出 2 嗎？
+
+不是這樣的。
+
+這一題的答案是：不一定。你可以自己執行個幾遍，應該就能夠像我一樣試出來：
+
+![](race.png)
+
+有可能會先 1 再 2，也有可能會先 2 再 1。
+
+這一切都跟非同步有關。
+
+在上面提供的範例中，可能對結果的影響沒那麼大，就是順序亂掉而已，所以考慮一個比較實際的例子可能會更容易理解。
+
+假設我們有一個「留言板」的 API，有兩個方法可以用，一個是新增留言，一個是抓取所有留言。我們想在新增留言完以後，重新抓取所有留言，很多人可能就會這樣寫：
+
+``` js
+const request = require('request');
+
+// 新增留言
+request.post({
+  url: 'https://example.com/api/messages',
+  form: { content: '新留言' }
+}, (err, res) => {
+  console.log('新增成功！');
+})
+
+// 抓取所有留言
+request('https://example.com/api/messages', (err, res, body) => {
+  console.log('所有留言：', body)
+})
+```
+
+那結果會是什麼？
+
+> 我先新增留言，再抓取留言，這樣應該沒什麼問題吧？
+
+不，問題可大了。
+
+你第一個 Request 先發歸先發，但「先發不代表會先到達」，這點超級重要。所以兩個 Request 如果第二個先到了，那你拿到的就還是舊的留言。
+
+再來，儘管第一個先到，但你其實是「立刻」就發了第二個 Request，兩個相差的時間可能只有 1ms 而已，這根本不是什麼差距。而 Server 處理第一個新增留言的時間很有可能大於這個差距，因此你新增了留言沒錯，但你第二個 Request 拿到的東西依然是舊的。
+
+簡單來說好了，「從你電腦發 Request 到 Server 的時間」跟「Server 的處理時間」以及「從 Server 發 Response 傳到你電腦的時間」這三者都是「無法估計」的，所以什麼事都有可能發生，有可能快有可能慢。
+
+所以上面那段程式碼就會有 bug 出現。
+
+這邊改寫一下助教 yakim 寫的平易近人的[解釋](https://github.com/Lidemy/mentor-program-4th-YSKuo/pull/4#discussion_r449785907)：
+
+======
+
+要理解為何有這隱藏的 bug，最簡單的理解是先把發送 request 假想成在美式餐廳點餐的動作：
+
+``` js
+order('一份洋蔥圈')
+order('一份漢堡')
+```
+
+我先後發送了兩個 order，而餐點送來的順序就會是 洋蔥圈 => 漢堡 嗎？ 不一定吧！可能會跟廚房做菜的習慣或各種原因都會影響到送餐順序。
+
+而發送一個 request 也是如此，假設我照順序發了三個 request a, b, c，沒有人可以保證 response 回傳的順序也是 a, b, c
+
+======
+
+接下來我們直接假設幾種狀況就好。
+
+### 狀況一
+
+1. 先發第一個 request，並且第一個 request 先抵達
+2. 第二個 request 抵達 server 的時候，第一個 request 已經處理完成並且傳回 response
+3. 第二個 response 抵達
+
+這是你原本心裡所想的情況，也是最理想的狀況。
+
+這種情況的話，會在新增完留言之後才抓取留言列表，所以拿到的會是最新的列表，有你剛剛新增的留言。
+
+### 狀況二
+
+1. 先發第一個 request，並且第一個 request 先抵達
+2. 第二個 request 抵達 server 的時候，第一個 request 還在處理
+3. 回傳第二個 response，拿到當下的留言
+4. 留言新增完成
+
+在這種情形下，因為第二個 response 處理的時候，你其實是還沒有新增留言的，因此拿到的結果會是舊的，不會有你剛剛新增的留言。
+
+除了以上兩種，還可以再假設超級多種，而且每一種情況都有可能發生。
+
+例如說第一個 request 不知道為什麼塞住了，所以你發出去以後，過了 5 秒才抵達 server。可是第二個 request 異常地快，發出去以後 1 秒就到 server 了。所以對 server 來說，你其實是「先抓取所有留言，才新增留言」。
+
+或是再舉一個例子，我這樣寫：
+
+``` js
+for(let i=1; i<=5; i++) {
+  request('https://example.com/api/messages/'+ i, (err, res, body) => {
+    console.log(`第${i}個留言`, body);
+  })
+}
+```
+
+其實就是拿第一篇到第五篇文章的內容，那請問我最後 log 出來的結果會是什麼？
+
+12345 嗎？
+
+不是，結果是我不知道。
+
+有可能是 12345，也有可能是 54321，甚至是 13542，每一種排列組合都有可能。
+
+原因就是我上面講過的：「從你電腦發 Request 到 Server 的時間」跟「Server 的處理時間」以及「從 Server 發 Response 傳到你電腦的時間」這三者都是「無法估計」的。
+
+所以如果我拿出下面這段程式碼：
+
+``` js
+const request = require('request');
+
+// 新增留言
+request.post({
+  url: 'https://example.com/api/messages',
+  form: { content: '新留言' }
+}, (err, res) => {
+  console.log('新增成功！');
+})
+
+// 抓取所有留言
+request('https://example.com/api/messages', (err, res, body) => {
+  console.log('所有留言：', body)
+})
+```
+
+問你說結果會是什麼，答案是：「不知道」。
+
+這種情況就叫做 race condition，最後的產出完全憑當下他們競爭的結果，你在事前無法預料結果是什麼。你有可能先新增留言，也有可能先拿到結果，每一種都有可能，所以結果變得無法預期。
+
+所以這種情況當然要避免。
+
+那怎麼避免？最好的方法當然就是：「確保第一個 request 處理完成時，我才發送第二個 request」。
+
+那我怎樣才知道第一個處理完了？當然就是從我拿到第一個的 response 的時候，我自然就知道第一個處理完了，不然我不可能拿得到 response 嘛。
+
+所以呢，你要這樣寫才是對的，確保新增留言成功，再去抓取留言：
+
+``` js
+const request = require('request');
+
+// 新增留言
+request.post({
+  url: 'https://example.com/api/messages',
+  form: { title: '新留言' }
+}, (err, res) => {
+  console.log('新增成功！');
+
+  // 確保新增成功，才去抓取所有留言
+  request('https://example.com/api/messages', (err, res, body) => {
+    console.log('所有留言：', body)
+  })
+})
+```
+
+這樣是唯一能保證順序的方法。
+
+之前還有看過同學偷吃步：
+
+``` js
+// 新增留言
+request.post({
+  url: 'https://example.com/api/messages',
+  form: { title: '新留言' }
+}, (err, res) => {
+  console.log('新增成功！');
+})
+
+setTimeout(() => {
+  request('https://example.com/api/messages', (err, res, body) => {
+    console.log('所有留言：', body)
+  })
+}, 1500) // 等個 1.5 秒
+```
+
+但這樣依然無法保證結果是正確的，因為我們可以假設第一個 request 處理完成時已經超過 1.5 秒了（而且這完全有可能發生），這樣你拿到的文章列表依然還是錯的。
+
+牽扯的網路的東西都是非同步的，而非同步就代表著順序是無法被預知的。你只能靠著自己寫 code 來掌握正確的順序。
+
+這個觀念超級無敵重要，請大家務必要知道～
+
+有問題記得在 slack 或是 spectrum 上面提問。
+
 ## JSON.parse
 
 我有看到很多人在程式碼裡面一拿到資料就直接對 response 做 `JSON.parse`，但若是 response 不是一個合法的 JSON 字串，會回傳錯誤：
@@ -151,4 +358,5 @@ if (response.statusCode >= 200 && response.statusCode < 300) {
 `process.argv[0]` 會是 node 的位置，`process.argv[1]` 會是 a.js 的位置，所以才會從 2 開始拿  
 
 它就是個陣列而已，別想的太複雜了。
+
 
