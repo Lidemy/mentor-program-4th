@@ -327,6 +327,8 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 針對 DOM 的事件傳遞，可以參考這一篇：[DOM 的事件傳遞機制：捕獲與冒泡](https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/)
 
+另外附增一個好用的網站：https://htmldom.dev/
+
 [HW7 作業連結](/homeworks/week7)
 
 #### 自我檢測
