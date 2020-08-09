@@ -15,14 +15,28 @@
 
 ~~留言板每一頁最多顯示 5 個留言，網站最底下需要顯示分頁，要能夠顯示現在在哪一頁、總共有幾頁還有前往上一頁跟下一頁的功能。~~
 
-原本要讓大家實作分頁功能，所以你在影片中可能會看到上面的作業敘述。
+接著是這一週你要自己實作的新功能。
 
-但之後我想了一下，改做：「載入更多」的功能就好
-如果留言 > 5 筆的話，就在下面出現載入更多的按鈕，按下去就會載入新的 5 筆。因為留言是從新排到舊，所以越下面的留言會越舊。當沒有更多留言可以載入時，就不會出現載入更多的按鈕。
+原本要讓大家實作分頁功能，所以你在影片中可能會看到上面舊的作業敘述。
+
+但後來我想了一下，改做：「載入更多」的功能就好。  
+
+如果留言大於 5 筆的話，下面會出現「載入更多」的按鈕，按下去就會載入新的 5 筆留言。因為留言是從新排到舊，所以越下面的留言會越舊。當沒有更多留言可以載入時，就不會出現載入更多的按鈕。
 
 介面的部分請盡量使用 Bootstrap，JS 的部分也請盡量用 jQuery，版面可以隨自己的喜好調整。
 
 範例：待補
+
+<details>
+  <summary>提示 #1</summary>
+  
+  在實作以前可以搜尋關鍵字：「cursor based pagination」，或者是參考底下資料：
+
+1. [API做翻页的两种思路](https://www.cnblogs.com/cgzl/p/10706881.html)
+2. [How to do Pagination?](https://b96016.gitlab.io/post/how-to-pagination/)
+3. [Pagination with Relative Cursors](https://engineering.shopify.com/blogs/engineering/pagination-relative-cursors)
+
+</details>
 
 ## hw2：Todo List
 
@@ -54,6 +68,15 @@
 介面的部分請盡量使用 Bootstrap，JS 的部分也請盡量用 jQuery，版面隨自己喜好設置就可以了，不需要跟上面那個圖片長得一樣。
 
 範例：待補
+
+<details>
+  <summary>提示 #1</summary>
+  
+  你可能會思考說要怎麼把 todos 的狀態存起來，其實你只要在前端用 JSON.stringify，把 todos 變成一個 JSON 字串送到後端存起來就好。
+
+  要恢復時就可以從後端拿資料，JSON.parse 之後你就有了 todos 的狀態。
+
+</details>
 
 ## hw3：簡答題
 
