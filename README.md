@@ -495,7 +495,13 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 #### 指定教材
 
-可以看 [FE201] 前端中階：那些前端會用到的工具們來學習這週的工具，對於這些工具，只要稍微知道怎麼使用即可，想深入研究的話再深入研究即可。
+可以看 [FE201] 前端中階：那些前端會用到的工具們來學習這週的工具，這週會把上週沒學到的 CSS 預處理器、Babel、gulp 跟 webpack 都學完。
+
+再次強調，對於這些工具，只要稍微知道怎麼使用即可，想深入研究的話再深入研究就好，我只想讓大家知道這些工具出現的意義還有要解決的問題而已。
+
+關於 webpack，看完課程或是看課程之前都可以參考這篇文章：[webpack 新手教學之淺談模組化與 snowpack](https://blog.huli.tw/2020/01/21/webpack-newbie-tutorial/)。
+
+課程中提到 loader 時有提到 Regular Expression，可以參考：[簡易 Regular Expression 入門指南](https://blog.huli.tw/2020/05/16/introduction-to-regular-expression/)。
 
 [HW13 作業連結](/homeworks/week13)
 

@@ -25,7 +25,7 @@
 
 介面的部分請盡量使用 Bootstrap，JS 的部分也請盡量用 jQuery，版面可以隨自己的喜好調整。
 
-範例：待補
+![](comments.png)
 
 <details>
   <summary>提示 #1</summary>
@@ -66,8 +66,6 @@
 3. 怎麼樣把 todos 顯示在前端
 
 介面的部分請盡量使用 Bootstrap，JS 的部分也請盡量用 jQuery，版面隨自己喜好設置就可以了，不需要跟上面那個圖片長得一樣。
-
-範例：待補
 
 <details>
   <summary>提示 #1</summary>
