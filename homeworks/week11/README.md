@@ -55,6 +55,10 @@
 
 （這一週作業的主軸是程式而不是切版，不一定要跟設計稿長得一模一樣，也可以自由發揮，如果時間不夠，請先忽略細節，先把功能做出來）
 
+如果時間不夠的話，這邊有已經切好版的 html，你只需要幫它套上 PHP 即可：[範例線上看](https://lidemy.github.io/mentor-program-4th/examples/week11/hw2/static/index.html)，
+檔案：[https://github.com/Lidemy/mentor-program-4th/tree/master/examples/week11/hw2/static](https://github.com/Lidemy/mentor-program-4th/tree/master/examples/week11/hw2/static)
+
+
 ### 延伸挑戰題
 
 在設計稿裡面的一些東西其實是加分項目，不在作業的基本需求裡面，這些加分項目為：
