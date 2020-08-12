@@ -58,6 +58,7 @@
 如果時間不夠的話，這邊有已經切好版的 html，你只需要幫它套上 PHP 即可：[範例線上看](https://lidemy.github.io/mentor-program-4th/examples/week11/hw2/static/index.html)，
 檔案：[https://github.com/Lidemy/mentor-program-4th/tree/master/examples/week11/hw2/static](https://github.com/Lidemy/mentor-program-4th/tree/master/examples/week11/hw2/static)
 
+（附註：在這週的範例裡面沒有實作 6 跟 7，而是直接在首頁上顯示所有文章）
 
 ### 延伸挑戰題
 
