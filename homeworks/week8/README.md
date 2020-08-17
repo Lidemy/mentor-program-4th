@@ -8,7 +8,10 @@
 
 ![](p1.png)
 
-設計稿：https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eaba473e21be61d702230b2
+設計稿：
+
+1. https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eaba473e21be61d702230b2
+2. https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eabf815ce89761c108bbdfc
 
 之前幫忙做的餐廳網站要推出新的活動了，老闆已經委託一間公司寫好了抽獎的 API，而你要幫忙的地方是實作前端介面並且跟 API 串接，這樣子就是一個完整的抽獎活動頁面了！
 
