@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>計算機率</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+</head>
+
+<body>
+  total: <span class="total">1</span><br>
+  first: <span class="first">0</span><br>
+  second: <span class="second">0</span><br>
+  third: <span class="third">0</span><br>
+  none: <span class="none">0</span><br>
+  error: <span class="error">0</span><br>
+  
+  <script>
+    const data = {
+      total: 0,
+      first: 0,
+      second: 0,
+      third: 0,
+      none: 0,
+      error: 0
+    }
+
+    const delay = 200
+    const max = 200
+    const errorMessage = 'error'
+
+    const apiUrl = 'https://dvwhnbka7d.execute-api.us-east-1.amazonaws.com/default/lottery'
+
+    // 抽獎
+    function getPrize(cb) {
+      let xhr = new XMLHttpRequest()
+      xhr.open('GET', apiUrl, true)
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          let data
+          try {
+            data = JSON.parse(xhr.response)
+          } catch(err) {
+            cb(errorMessage)
+            return
+          }
+
+          if (!data.prize) {
+            cb(errorMessage)
+            return
+          }
+
+          cb(null, data)
+        } else {
+          cb(errorMessage)
+        }
+        
+      }
+      xhr.onerror = function() {
+        cb(errorMessage)
+      }
+      xhr.send()
+    }
+
+    function loop() {
+      if (data.total >= max) return
+      getPrize((err, response) => {
+        data.total++
+        if (err) {
+          data.error++
+        } else {
+          data[response.prize.toLowerCase()]++
+        }
+        update()
+        setTimeout(loop, delay)
+      })
+    }
+
+    loop()
+
+    function update() {
+      const keys = ['first', 'second', 'third', 'none', 'error']
+      const total = data.total
+      document.querySelector('.total').innerText = total
+      for(let key of keys) {
+        document
+          .querySelector('.' + key)
+          .innerText = (Number(data[key])*100) / total
+      }
+    }
+  </script>
+</body>
+</html>

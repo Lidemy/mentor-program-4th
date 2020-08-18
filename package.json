@@ -8,7 +8,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -28,10 +27,10 @@
   },
   "homepage": "https://github.com/Lidemy/mentor-program-4th#readme",
   "dependencies": {
-    
+    "process": "^0.11.10",
+    "request": "^2.88.2"
   },
   "devDependencies": {
-    "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
