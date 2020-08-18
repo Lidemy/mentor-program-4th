@@ -57,3 +57,23 @@
 
 其實上一點講的也是，只是是把 style 跟 JS 切開，透過 CSS 跟 class 把兩者連結在一起。
 
+## Event listener
+
+想一下，以底下的程式碼來說，按下按鈕以後會發生什麼事？
+
+``` js
+function run() {
+  document.querySelector('button').addEventListener('click', () => {
+    console.log('click!')
+  })
+}
+run()
+run()
+run()
+```
+
+答案是，會印出三次 `click`，因為你每呼叫一次函式，就會加上一個 event listener，所以有三個 onClick 的 event listenr 在 button 上面。每按下一次，就會依序執行這三個 listener。
+
+這點是新手很常忽略的一點，有些會以為看起來是同一個 function，以為只會加一次。沒有，你呼叫幾次就會加幾次。
+
+

@@ -376,11 +376,12 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 （「基礎實戰：Job board 職缺報報」跟「基礎實戰：Blog 部落格」屬於比較早期拍的影片，程式碼的風格跟其他的可能會不一樣，建議你可以先跳過這兩個段落，實戰的部分直接看「真正的實戰：留言板 - 初階實作篇」，如果覺得看不太懂，再回來看這兩個早期拍的）
 
-並且透過以下幾篇文章加深對 Cookie 與 Session 的理解：
+並且透過以下幾篇文章加深對 Cookie 與 Session 的理解（第一篇要看懂，二三篇大概看過就好，看不懂很正常，沒有關係）：
 
 1. [白話 Session 與 Cookie：從經營雜貨店開始](https://medium.com/@hulitw/session-and-cookie-15e47ed838bc)
 2. [淺談 Session 與 Cookie：一起來讀 RFC](https://blog.huli.tw/2019/08/09/session-and-cookie-part2/)
-3. [深入 Session 與 Cookie：Express、PHP 與 Rails 的實作](https://blog.huli.tw/2019/08/09/session-and-cookie-part3/)  （這篇看不懂沒關係，很正常）
+3. [深入 Session 與 Cookie：Express、PHP 與 Rails 的實作](https://blog.huli.tw/2019/08/09/session-and-cookie-part3/)  
+
 
 [HW9 作業連結](/homeworks/week9)
 
@@ -432,9 +433,11 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 ####  指定教材
 
-把 [BE101] 用 PHP 與 MySQL 學習後端基礎的其他部分繼續看完，看到「真正的實戰：留言板 - 再次修正問題篇」結束，有時間的話也可以把整堂課都看完。
+繼續看 [BE101] 用 PHP 與 MySQL 學習後端基礎的其他部分，看到「真正的實戰：留言板 - 再次修正問題篇」結束就好，有時間的話也可以把整堂課都看完。
 
-也可以看 [CS101] 初心者的計概與 coding 火球術：4-3、5-4 複習一下資訊安全相關的觀念。想知道更多資安相關的概念，可以參考：[程式導師實驗計畫第二期：Week6-2：資訊安全](https://www.youtube.com/watch?v=HGjjxKsCgr0) （有時間再看）
+也可以看 [CS101] 初心者的計概與 coding 火球術：4-3、5-4 複習一下資訊安全相關的觀念。
+
+想知道更多資安相關的概念，可以參考：[程式導師實驗計畫第二期：Week6-2：資訊安全](https://www.youtube.com/watch?v=HGjjxKsCgr0) （有時間再看）
 
 有一個與資安相關的東西叫做 CSRF，在課程中沒有講，是考驗你自學能力的時候，推薦閱讀這篇：[讓我們來談談 CSRF](https://blog.techbridge.cc/2017/02/25/csrf-introduction/)
 
@@ -490,10 +493,22 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 3. Gulp
 4. Webpack
 
-也會幫大家補充一些 CSS 相關的知識，像是：
+主要是想讓大家稍微知道這些工具的使用而已，在之後的課程裡面不一定會實際用到。
+
+除了這個以外，也會幫大家額外補充一些重要的概念，像是：
+
+1. 什麼是 Promise？
+2. 什麼是 Fetch？
+
+在 CSS 的部分呢，也會補充兩個小主題：
 
 1. CSS Selector 權重的計算方式
 2. CSS Sprites 與 Data URI
+
+總而言之呢，這週的東西可能會比較雜一點，但主要可以分成兩個部分：
+
+1. 前端工具
+2. JS 與 CSS 補充概念
 
 #### 指定教材
 
@@ -505,34 +520,41 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 課程中提到 loader 時有提到 Regular Expression，可以參考：[簡易 Regular Expression 入門指南](https://blog.huli.tw/2020/05/16/introduction-to-regular-expression/)。
 
+其他的補充如下：（連結待補）
+
 [HW13 作業連結](/homeworks/week13)
 
 #### 自我檢測
 
 - [ ] P1 你知道 webpack 的目的以及原理
 - [ ] P1 你熟悉如何使用 webpack 進行模組化開發
+- [ ] P1 你知道如何使用 Promise
+- [ ] P2 你知道如何使用 fetch
 - [ ] P2 你知道 gulp 的目的以及原理
-- [ ] P2 你熟悉如何使用 gulp 建構自動化工作流程
-- [ ] P2 你知道 CSS 優化的一些小技巧
 - [ ] P2 你知道 CSS Sprites 與 Data URI 的優缺點
 - [ ] P2 你知道什麼是 uglify 與 minify
+- [ ] P3 你熟悉如何使用 gulp 建構自動化工作流程
+- [ ] P3 你知道 CSS 優化的一些小技巧
 
 ### 第十四週（09/14 ~ 09/20）：伺服器與網站部署
 
-有了自己的前後端程式之後，就可以開始來部署了。這週的重點會放在帶大家直接去買主機（AWS、[Digital Ocean](https://m.do.co/c/2e78666c0866)、Linode），並且了解如何連上主機。
+有了自己的前後端程式之後，就可以開始來部署了。這週的重點會放在帶大家直接去買主機（[AWS](https://aws.amazon.com/tw/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc)、[Digital Ocean](https://m.do.co/c/2e78666c0866)、[GCP](https://cloud.google.com/free?hl=zh-tw)、Linode），並且了解如何連上主機。
+
+關於主機的部分，想要用哪一家的都可以，AWS 有一年免費的方案，GCP 則是部分服務沒有超過用量就免費，其他的應該都是要付費的。
 
 也會讓大家購買自己的網域，理解如何將網域以及主機串連起來，讓大家可以連線到你的網站。
 
-除此之外，也會稍微提到一些系統架構，還有跟資料庫的一些知識，像是 ACID、Transaction、View 以及 Stored procedure 等等。
+這週也要特別感謝 [gandi](https://www.gandi.net/) 連續四期全額贊助了網域的費用 <(_ _)>。
 
-這週也要特別感謝 [gandi](https://www.gandi.net/) 連續三期全額贊助了網域的費用 <(_ _)>。
+第四期學生請找助教索取網域的折扣碼（每人限一個），可以用來註冊 .tw 的域名。
 
+除此之外，也會稍微提到一些系統架構，還有跟資料庫的一些知識，像是 ACID、Transaction、View 以及 Stored procedure 等等，這些專有名詞的重要性是 P2 與 P3，只要稍微聽過有個印象就好。
 
 #### 指定教材
 
-這週最重要的就是部署自己的網站，這邊會希望大家自己先查資料，試試看能不能靠自己就部署成功。
+這週最重要的就是部署自己的網站，這邊會希望大家自己先查資料，試試看能不能靠自己就部署成功，目標是把你之前的 PHP 網站放到自己的主機上，並且連 MySQL 都一起建好。
 
-若是不行的話，請參考以下幾篇：
+若是不行的話，請參考以下幾篇，或者是自行搜尋相關資訊：
 
 1. [部署 AWS EC2 遠端主機 + Ubuntu LAMP 環境 + phpmyadmin](https://github.com/Lidemy/mentor-program-2nd-yuchun33/issues/15)
 2. [一小時完成 VPS (Virtual Private Server) 部署](https://github.com/Lidemy/mentor-program-2nd-futianshen/issues/21)
@@ -573,6 +595,13 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 這一週的作業除了心得以外，也提供了一個跟以往不太一樣的測驗：[網站前後端開發基礎測試](https://github.com/Lidemy/mentor-program-3rd/issues/5)，一共十題簡答題，答案預設是隱藏的，自己答完之後可以自己點開對答案。
 
+另外，這週會幫大家補充瀏覽器運作的相關知識，可以參考這一系列的文章：
+
+1. [Inside look at modern web browser (part 1)](https://developers.google.com/web/updates/2018/09/inside-browser-part1)
+2. [中譯版](https://juejin.im/post/6844903679389073415)，其他 part 請自行搜尋
+
+看完以後可以看我之前對這些文章的導讀：[瀏覽器運作導讀](https://youtu.be/5iaNYpVedIU?t=2432)
+
 [HW15 作業連結](/homeworks/week15)
 
 ### 第十六週（09/28 ~ 10/04）：JavaScript 核心與物件導向
@@ -587,9 +616,10 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 #### 指定教材
 
-1. 程式導師實驗計畫第二期：Week9-2 JavaScript 執行原理
-2. [JS201] 進階 JavaScript：那些你一直搞不懂的地方
-3. [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+1. [JS201] 進階 JavaScript：那些你一直搞不懂的地方
+2. [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+
+如果你不排斥比較長的影片，也可以看這個：[程式導師實驗計畫第二期：Week9-2 JavaScript 執行原理](https://youtu.be/3s69FPDZGRk)
 
 [HW16 作業連結](/homeworks/week16)
 
