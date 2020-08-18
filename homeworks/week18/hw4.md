@@ -1,6 +1,6 @@
-## gulp 跟 webpack 有什麼不一樣？我們可以不用它們嗎？
+## 什麼是 ORM？
 
 
-## hw3 把 todo list 這樣改寫，可能會有什麼問題？
+## 什麼是 N+1 problem？
 
-## CSS Sprites 與 Data URI 的優缺點是什麼？
+## 什麼是反向代理（Reverse proxy）？
