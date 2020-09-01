@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitch Live Games</title>
+  <meta name="description" content="Week8 作業">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      position: fixed;
+      height: 60px;
+      background: white;
+      box-shadow: 1.4px 1.4px 6px 0 #97a2a0;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 36px;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .navbar__site {
+      font-size: 32px;
+    } 
+
+    .navbar__nav {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: stretch;
+      height: 100%;
+    }
+
+    .navbar__nav li {
+      cursor: pointer;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      margin-left: 16px;
+      transition: all 0.2s;
+    }
+
+    .navbar__nav li:hover {
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+    }
+
+    .wrapper {
+      max-width: 1440px;
+      margin: 0px auto 0px auto;
+      padding: 80px 0px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .streams {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stream {
+      width: 360px;
+      background: #333;
+      color: white;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      opacity: 0.9;
+      margin-left: 16px;
+      margin-top: 16px;
+    }
+
+    .stream > img {
+      width: 100%;
+    }
+
+    .stream__data {
+      display: flex;
+      align-items: center;
+      padding: 6px;
+    }
+
+    .stream__avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+      min-width: 64px;
+    }
+
+    .stream__avatar > img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .stream__intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .stream__title {
+      font-size: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 10px;
+    }
+
+    .stream:hover {
+      transform: scale(1.07);
+      filter: brightness(1.2);
+      box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+    }
+
+    .stream-empty {
+      width: 360px;
+      margin-left: 16px;
+    }
+
+    .bg {
+      background: url(bg.jpg) no-repeat;
+      background-size: 100% 100%;
+      position: relative;
+
+    }
+
+    .bg:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar__site">Twitch Top Games</div>
+    <ul class="navbar__nav">
+    </ul>
+  </header>
+  <div class="bg">
+    <div class="wrapper">
+    <h1>Loading...</h1>
+    <h2>Top 20 popular live streams sorted by current viewers</h2>
+    <section class="streams">
+      
+    </section>
+  </div>
+  <script>
+    // <div class="stream-empty"></div>
+    const API_URL = 'https://api.twitch.tv/kraken'
+    const CLIENT_ID = 's44s145uexjgeu9mqqa1s93oc1bnli'
+    const STREAM_TEMPLATE = `<div class="stream">
+          <img src="$preview" />
+          <div class="stream__data">
+              <div class="stream__avatar">
+                  <img src="$logo">
+              </div>
+              <div class="stream__intro">
+                  <div class="stream__title">$title</div>
+                  <div class="stream__channel">
+                      $name
+                  </div>
+              </div>
+          </div>
+        </div>`
+
+    getGames(function(games) {
+      for(let game of games) {
+        let element = document.createElement('li')
+        element.innerText = game.game.name
+        document.querySelector('.navbar__nav').appendChild(element)
+      }
+
+      // 顯示第一個遊戲的實況名稱
+      changeGame(games[0].game.name)
+    });
+    
+
+    document.querySelector('.navbar__nav').addEventListener('click', e => {
+      if(e.target.tagName.toLowerCase() === 'li') {
+        const gameName = e.target.innerText;
+        changeGame(gameName)
+      }
+    })
+
+    function changeGame(gameName) {
+      document.querySelector('h1').innerText = gameName
+      document.querySelector('.streams').innerHTML = ''
+      getStreams(gameName, function(streams) {
+        for(let stream of streams) {
+          appendStream(stream)
+        }
+      })
+    }
+
+    function appendStream(stream) {
+      let element = document.createElement('div');
+      document.querySelector('.streams').appendChild(element);
+      element.outerHTML = STREAM_TEMPLATE
+        .replace('$preview', stream.preview.large)
+        .replace('$logo', stream.channel.logo)
+        .replace('$title', stream.channel.status)
+        .replace('$name', stream.channel.name)
+    }
+
+    function getGames(callback) {
+      const request = new XMLHttpRequest();
+      request.open('GET', `${API_URL}/games/top?limit=5`, true);
+      request.setRequestHeader('Client-ID', CLIENT_ID)
+      request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          const games = JSON.parse(this.response).top
+          callback(games)
+        }
+      }
+      request.send();
+    }
+
+    function getStreams(gameName, callback) {
+      const request = new XMLHttpRequest();
+      request.open('GET', `${API_URL}/streams?game=${encodeURIComponent(gameName)}`, true);
+      request.setRequestHeader('Client-ID', CLIENT_ID)
+      request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          const data = JSON.parse(request.response).streams
+          callback(data)
+        }
+      }
+      request.send()
+    }
+  </script>
+</body>
+</html>
