@@ -619,7 +619,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. [JS201] 進階 JavaScript：那些你一直搞不懂的地方
 2. [What the heck is the event loop anyway? | Philip Roberts | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
-如果你不排斥比較長的影片，也可以看這個：[程式導師實驗計畫第二期：Week9-2 JavaScript 執行原理](https://youtu.be/3s69FPDZGRk)
+如果你不排斥比較長的影片，也可以看這個：[程式導師實驗計畫第二期：Week9-2 JavaScript 執行原理](https://youtu.be/3s69FPDZGRk) （內容有很多應該都該 JS201 類似，所以有時間再看就好，沒看也沒關係）
 
 [HW16 作業連結](/homeworks/week16)
 
@@ -644,7 +644,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 #### 指定教材：
 
-1. [BE201] Express 與 Sequelize：「ORM 與 Sequelize」單元前所有內容
+1. [BE201] Express 與 Sequelize：全部
 
 [HW17 作業連結](/homeworks/week17)
 
@@ -652,6 +652,12 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 - [ ] P1 學習如何使用 Express 及其相關套件
 - [ ] P1 我理解為什麼會需要框架
+- [ ] P1 了解什麼是 ORM
+- [ ] P1 了解 ORM 的優缺點
+- [ ] P1 了解什麼是 N+1 problem 
+- [ ] P1 我知道如何部署 Node.js 應用程式
+- [ ] P2 我知道如何使用 Nginx
+- [ ] P2 我知道如何使用 PM2
 
 ### 第十八週（10/12 ~ 10/18）：現代後端開發（下）
 
@@ -671,12 +677,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 #### 自我檢測
 
-- [ ] P1 了解什麼是 ORM
-- [ ] P1 了解 ORM 的優缺點
-- [ ] P1 了解什麼是 N+1 problem 
-- [ ] P1 我知道如何使用 Nginx
-- [ ] P1 我知道如何使用 PM2
-- [ ] P1 我知道如何部署 Node.js 應用程式
+
 
 ### 第十九週（10/19 ~ 10/25）：產品開發流程
 
