@@ -16,10 +16,10 @@
 
 而這個作業呢，就是要把第八週的那個 Twitch API 的作業從 XMLHttpRequest 改成用 fetch 來串接 API。
 
-## hw3：簡答題
+## hw4：簡答題
 
 1. Webpack 是做什麼用的？可以不用它嗎？
 2. gulp 跟 webpack 有什麼不一樣？
 3. CSS Selector 權重的計算方式為何？
 
-請將答案寫在 [hw3.md](hw3.md)。
+請將答案寫在 [hw4.md](hw4.md)。
