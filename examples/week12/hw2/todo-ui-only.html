@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Week12 Todo List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    .btn-delete {
+      opacity: 0;
+    }
+    .todo:hover .btn-delete {
+      opacity: 1;
+    }
+
+    input[type=checkbox]:checked ~ label {
+      text-decoration: line-through;
+      color: rgba(0,0,0,0.3);
+    }
+
+    .todo__content-wrapper {
+      flex: 1;
+    }
+
+    .todo__content {
+      display: block;
+    }
+
+    .options div, .clear-all {
+      cursor: pointer;
+      border-radius: 6px;
+      padding: 4px;
+      border: 2px solid transparent;
+    }
+
+    .options div.active {
+      border-color: rgba(255, 0, 0, 0.3);
+    }
+
+    .options div:hover {
+      border-color: rgba(255, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h1 class="text-center">Todo List</h1>
+        <div class="input-group mb-3">
+          <input type="text" class="input-todo form-control" placeholder="todo">
+          <div class="input-group-append">
+            <button class="btn btn-add btn-outline-secondary" type="button">新增</button>
+          </div>
+        </div>
+        <div class="todos list-group ">
+          <div class="todo list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <div class="todo__content-wrapper custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="todo-1">
+              <label class="todo__content custom-control-label" for="todo-1">todo1</label>
+            </div>
+            <button type="button" class="btn-delete btn btn-danger">刪除</button>
+          </div>
+
+        </div>
+        <div class="info mt-1 d-flex justify-content-between align-items-center">
+          <div>2 個未完成</div>
+          <div class="options d-flex">
+            <div class="active">全部</div>
+            <div class="ml-2">未完成</div>
+            <div class="ml-2">已完成</div>
+          </div>
+          <div class="clear-all">
+            移除已完成待辦事項
+          </div>
+        </div>
+        <button type="button" class="btn btn-save btn-primary">儲存</button>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    
+    function escapeHtml(unsafe) {
+      return unsafe
+           .replace(/&/g, "&amp;")
+           .replace(/</g, "&lt;")
+           .replace(/>/g, "&gt;")
+           .replace(/"/g, "&quot;")
+           .replace(/'/g, "&#039;");
+    }
+
+  </script>
+</body>
+</html>
