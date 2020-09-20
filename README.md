@@ -639,6 +639,11 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 如果你不排斥比較長的影片，也可以看這個：[程式導師實驗計畫第二期：Week9-2 JavaScript 執行原理](https://youtu.be/3s69FPDZGRk) （內容有很多應該都該 JS201 類似，所以有時間再看就好，沒看也沒關係）
 
+物件導向的地方我自己沒有很熟，所以還在探索怎麼教會比較好，這邊有兩個第二期的影片，會用 PHP 跟 JavaScript 當範例。會用 PHP 是因為 JS 中的物件導向並不完整，而 PHP 的完整許多，但要注意影片中會在 PHP 跟 JS 中切換，建議大家只需要了解一些基本概念即可，不需要執著於一定要完全搞懂物件導向：
+
+1. [程式導師實驗計畫第二期：Week5-2：物件導向程式設計](https://www.youtube.com/watch?v=nZhzLcV9eHI&ab_channel=Lidemy%E9%8B%B0%E5%AD%B8%E9%99%A2)
+2. [Week5 物件導向（續）：繼承與 static](https://www.youtube.com/watch?v=k5TGAw7faNg&ab_channel=Lidemy%E9%8B%B0%E5%AD%B8%E9%99%A2)
+
 [HW16 作業連結](/homeworks/week16)
 
 #### 自我檢測
@@ -651,6 +656,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 - [ ] P1 你能夠舉出一個運用 Closure 的例子
 - [ ] P1 你知道 Prototype 在 JavaScript 裡是什麼
 - [ ] P1 你知道大部分情況下 this 的值是什麼
+- [ ] P2 你知道物件導向的基本概念（類別、實體、繼承、封裝）
 
 ### 第十七週（10/05 ~ 10/11）：現代後端開發（上）
 
