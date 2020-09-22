@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0px;
+  list-style-type: none;
+  font-family: MicrosoftJhengHei;
+  box-sizing: border-box;/*border固定長寬，元素的實際大小會是 content + padding + border*/
+}
+
+
+.banner {
+  background: url(https://lh4.googleusercontent.com/rd2dgrCo8lX32Jn5lkmfbzu9a7vmmXsZgS6WHE7tQCdZx8Xs4BGqE_1FlkvU9u-aE4i-d0aCD3fPX6wma7HjMLHjeYCAC9aIfw7lomDfmgGBsjZmBFyjuEPh1CovTGSSzpi9I-eVIJXzcFg)
+  center/cover no-repeat;
+  height: 270px;
+	
+}
+.main {
+  background: #e91e6321;
+}
+.main_bottom {
+  background: #ffffff;
+  padding: 35px 20px 15px 25px;
+  margin: -100px auto 15px auto;
+  max-width: 550px;
+  border-top: 8px solid #f4433685;
+  box-shadow: 1px 1px 5px 0;
+  border-radius: 4px;
+}
+.summary_title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.summary_content {
+  font-size: 10px;
+  padding-top: 15px;
+}
+#text_date {
+  padding-bottom: 3px;
+}
+.summary_strong {
+  font-size: 13px;
+  font-weight: bold;
+  color: #f44336;
+  padding: 15px 0px 25px 0px;
+}
+
+.form_item {
+  font-size: 12px;
+  padding-bottom: 30px;
+}
+
+.form_item h1:after {
+  content: '*';
+  color: #f44336;
+  font-size: 90%;
+  margin-left: 4px;
+  position: absolute;
+  transform: translate(0,7%);
+}
+
+.input_half {
+  border: none;
+  border-bottom: 2px solid #eee;
+  background: none;
+  border-radius: 0;
+  padding-top: 10px;
+  font-size: 13px;
+  margin-top: 10px;
+  position: relative;
+}
+.form_item input:focus {
+  outline: none;
+  border-bottom: 2px solid #d93025;
+}
+.form_item h1 {
+  font-weight: 500;
+
+}
+.form_radio {
+  padding: 10px 0px 3px 0px;
+}
+.comment {
+  position: absolute;
+  transform: translate(0,25%);
+}
+.btn_submit {
+  height: 35px;
+  width: 80px;
+  border-radius: 3px;
+  background-color: #e91e6382;
+  color: #fff;	
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.btn_submit:hover {
+  background: #f4433685;
+  box-shadow: 0 0 0 0.3px;
+}
+
+.footer {
+  width: 100%;
+  height: 50%;
+  background: #e91e6363;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 35px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0px;
+}
