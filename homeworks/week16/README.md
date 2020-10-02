@@ -95,6 +95,12 @@ hello() // ??
 
 請將答案寫在 [hw5.md](hw5.md)。
 
+## 練習題
+
+事實上 this, hoisting 這些東西在實際開發上會用到的機會比較少，最常用到的是 class 與 closure 的觀念，這邊提供三個題目給大家練習：[Week16 練習題](https://github.com/Lidemy/mentor-program-4th/issues/16)，裡面有附上解答
+
+如果覺得題目不清楚，可以直接看測試檔會比較快
+
 ## 挑戰題
 
 看完 [Dmitry Soshnikov 這個部落格](http://dmitrysoshnikov.com/)的兩個系列：ECMA-262-3 in detail 與 ECMA-262-5 in detail。
