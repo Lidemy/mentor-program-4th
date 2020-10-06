@@ -2,6 +2,18 @@
 
 ## 提示：在寫完作業之後看效果最佳，沒寫作業前請不要看
 
+## prepare statement
+
+大家要注意到 prepare statement 其實不是 PHP 的東西，是資料庫的。是你在 PHP 呼叫以後他幫你去告訴資料庫要做這件事。
+
+所以只是上面的一層包裝而已，不要以為這是 PHP 的東西了。
+
+詳情可以參考：[Prepared Statements ](https://www.php.net/manual/en/mysqli.quickstart.prepared-statements.php)：
+
+> The MySQL database supports prepared statements. A prepared statement or a parameterized statement is used to execute the same statement repeatedly with high efficiency.
+
+而真正的 MySQL prepare statement 是這樣用的：[13.5 Prepared Statements](https://dev.mysql.com/doc/refman/8.0/en/sql-prepared-statements.html)
+
 ## 雜湊跟加密的區別
 
 雜湊不可逆，加密可逆，叫做解密。
