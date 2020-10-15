@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0px;
+  list-style-type: none;
+  font-family: fantasy;
+  box-sizing: border-box;/*border固定長寬，元素的實際大小會是 content + padding + border*/
+}
+
+.title {
+	font-size: 90px;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+	margin: 10px 0px 20px 0px;
+	color: #7cc21ff2;
+}
+
+
+/*main*/
+.main {
+  display: flex;
+  justify-content: center;
+  background: #ffeb3b4a;
+  padding: 20px;
+
+}
+
+
+/*list*/
+.summary {
+	background: #ffffff;
+  width: 600px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+
+.create_todo::placeholder {
+	color: rgba(0, 0, 0, 0.1);
+	letter-spacing: 0.2em;
+  font-weight: lighter;
+}
+
+.create_todo {
+  padding: 16px 16px 16px 30px;
+  border: none;
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+  outline: none;
+  width: 100%;
+  font-size: 24px;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+  line-height: 1.4em;
+}
+
+/* list */
+.view {
+	width: 97%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view div label {
+	display: flex;
+	align-items: center;
+}
+
+.list p {
+  padding: 0.4em 0;
+}
+.list li {
+  position: relative;
+  font-size: 18px;
+  font-weight: lighter;
+  color: #4d4d4d;
+  letter-spacing: 0.2em;
+  text-align: left;
+  padding: 5px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list li:hover {
+  text-shadow: 0 0 0.1px black;
+}
+
+.list li input[type=text] {
+  width: 100%;
+  padding: 0.1em;
+  font-size: 18px;
+  font-weight: lighter;
+  letter-spacing: 0.2em;
+  line-height: 1.4em;
+  outline: none;
+}
+
+.list li input[type=checkbox] {
+	display: none;
+}
+
+.list li input[type=checkbox]:checked + label span {
+	min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+  filter: opacity(0.3);
+  margin: 7.5px 15px 7.5px 5px;
+  background: url(./photo/checked.svg) center/cover no-repeat;
+}
+
+.list li input[type=checkbox]:checked ~ label p {
+	text-decoration: line-through;
+}
+
+
+.list li input[type=checkbox] + label span {
+	justify-content:flex-start;
+	min-width: 20px;
+  min-height: 20px;
+  background: url(./photo/unchecked.svg) center/cover no-repeat;
+  cursor: pointer;
+  filter: opacity(0.3);
+  margin: 7.5px 15px 7.5px 5px;
+}
+
+.list li input[type=button] {
+  justify-content:flex-end;
+  border: none;
+  outline: none;
+  right: 30px;
+  top: 2px;
+  background: url(./photo/delete.svg) center/cover no-repeat;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+

@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/*border固定長寬，元素的實際大小會是 content + padding + border*/
+}
+/* navbar */
+.nav_wrapper {
+  height: 70px;
+  display: flex;
+  justify-content: center; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+.navbar {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;/*陰影*/
+}
+
+.nav_title_name {
+  padding: 20px;
+  margin-left: 30px;
+  font-size: 26px;/*字體大小*/
+  font-family: Questrial;/*字體*/
+  color: #489846;
+}
+
+.nav_title_list {
+  padding: 20px;
+  margin-right: 30px;
+  font-family: MicrosoftJhengHei;
+  color: #010101;
+  display: flex;
+  list-style-type: none;/*去除點點*/
+}
+
+.nav_title_list a.nav_function, .nav_title_list a:hover { /*hover鼠標*/
+  background: #ff7286;
+  border-radius: 5px;/*框線去稜角*/
+  color: #fefefe;
+}
+
+.nav_title_list a {
+  padding:12px 24px;
+  margin-right: 5px;
+  text-decoration: none;/*文字去底線*/
+  transition:background 0.2s ease-in-out;
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  color: #010101;
+}
+/* navbar */
+.nav_wrapper {
+  height: 70px;
+  display: flex;
+  justify-content: center; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+}
+
+.navbar {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;/*陰影*/
+}
+
+.nav_title_name {
+  padding: 20px;
+  margin-left: 30px;
+  font-size: 26px;/*字體大小*/
+  font-family: Questrial;/*字體*/
+  color: #489846;
+}
+
+.nav_title_list {
+  padding: 20px;
+  margin-right: 30px;
+  font-family: MicrosoftJhengHei;
+  color: #010101;
+  display: flex;
+  list-style-type: none;/*去除點點*/
+}
+
+.nav_title_list a.nav_function, .nav_title_list a:hover { /*hover鼠標*/
+  background: #ff7286;
+  border-radius: 5px;/*框線去稜角*/
+  color: #fefefe;
+}
+
+.nav_title_list a {
+  padding:12px 24px;
+  margin-right: 5px;
+  text-decoration: none;/*文字去底線*/
+  transition:background 0.2s ease-in-out;
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  color: #010101;
+}
+
+/*FQA title*/
+.green_block {
+  min-width: 10px;
+  height: 27px;
+  background: #a3dea2;
+  margin: 5PX;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 110PX 0PX 83PX 0PX;
+}
+
+.fqa_title {
+  height: 37px;
+  padding-left: 8px;
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block; 
+}
+
+/*FAQ QUESTION*/
+
+
+.faqlist {
+  background: #ffffff;
+  padding: 35px 20px 15px 25px;
+  margin: -100px auto 15px auto;
+  max-width: 700px;
+  list-style-type: none;
+}
+
+.quest {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggleOpen {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #fff;
+  background-color: #a3dea2;
+  cursor: pointer;
+}
+
+  
+.faqlist h3 b {
+  padding-right: 8px;
+  font-style: italic;
+  font-size: 17px;
+  color: #ab4453;
+}
+
+.faqlist h3 {
+  position: relative;
+  cursor: pointer;
+}
+
+.faqlist div + div {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 14px;
+  color: #686868;
+  line-height: 1.8;
+  background-color: #e7e7e759;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 45px;
+}
+
+.hr {
+  width: 93%;
+  margin: 20px 0;
+  border-bottom: 1px dashed #f4433685;
+}
+
+.hide {
+  display: none;
+}
+
+.minus {
+  font-size: 13px;
+  padding: 4px 9px;
+}
+
+/*footer*/
+.footer_top {
+  background-color: #e8efee;
+  color: #484848;
+  font-size: 10px;
+  font-family: MicrosoftJhengHei;
+  padding: 35px 55px 30px 55px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_info div + div {
+  padding-top: 8px;
+} 
+
+.footer_site {
+  font-size: 26px;
+  font-family: Questrial;
+  color: #489846;
+}
+
+
+.footer_logo p {
+  margin-top: 8px;
+  color: #484848;
+  font-size: 10px;
+  font-family: MicrosoftJhengHei;
+  position: absolute;
+  transform: translate(-14%);
+  min-width: 153px;
+}
+
+.footer_bottom {
+  background-color: #35564b;
+  font-family: MicrosoftJhengHei;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {/*轉成RWD版*/
+  .navbar {
+	  flex-direction: column;
+	  height: 125px;
+	  justify-content: unset;
+  }
+
+  .nav_title_list a {
+	  padding: 6px 12px;
+	  font-size: 10px;
+  }
+
+  .nav_title_list{
+	  font-size: 10px;
+	  padding: 10px;
+	  margin-right: 0px;
+  }
+  .green_block {
+    min-width: 5px;
+    height: 15px;
+    margin: 2PX;
+  }
+
+  .flex {
+    margin: 150PX 0PX 83PX 0PX;
+  }
+
+  .fqa_title {
+    height: 18px;
+    padding-left: 3px;
+    font-size: 12px;
+  }
+
+  .faqlist h3 {
+    font-size: 9px;
+  }
+  
+
+  .toggleOpen {
+    top: -2px;
+    left: 80vw;
+  }
+
+  .footer_top {
+	  flex-direction:column-reverse;
+  }
+
+  .footer_logo {
+	  padding-bottom: 30px;
+  }
+
+  .footer_logo p {
+	  position: none;
+	  transform: none;
+  }
+
+}
