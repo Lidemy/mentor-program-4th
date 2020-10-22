@@ -2,7 +2,6 @@
 
 提示：在寫完作業之後看效果最佳，沒寫作業前請不要看
 
-
 ## 你的離開不是你以為的離開
 
 跟之前 PHP 一樣，很多人以為 `header("Location: index.php")`之後程式就結束了，不，沒有，這只是個 function call 而已。
@@ -123,4 +122,15 @@ function checkIsLogin(req, res, next) {
 
 app.get('/admin', checkAuth, adminController.index)
 ```
+
+## 環境變數
+
+敏感資料要放環境變數，例如說 session 的 secret 雖然課程沒特別提，但其實就算是，可以參考：https://github.com/Lidemy/mentor-program-4th-awuuu0716/pull/20#discussion_r504042290
+
+## 命名規則
+
+JS 命名規則提很多次了，通常是 camelCase，然後 url 會是 kebab case，用 `-` 來分開。
+
+例如說網址會是 `add-post` 而不是 `addPost` 也不是 `add_post`，用來處理的 controller function 會叫 `handleAddPost`，不會是 `handle_add_post` 也不會是 `HandleAddPost`。
+
 
