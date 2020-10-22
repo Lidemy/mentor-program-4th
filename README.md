@@ -758,6 +758,12 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 指定教材：
 
+請注意，React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動，那就是多了一個東西叫做 hooks，讓 function component 也能擁有 state。
+
+這個對 React 生態系的影響很大，甚至改變了原本在寫 React 時的思考方式，是很大的變革，但底下的指定教材都是比較舊的內容，裡面會提到的東西叫做 class component。
+
+雖然說 class component 還是很多 app 看得見，但基本上新的 app 都是用 function component + hooks 在開發了，之後會推出 hooks 的課程，在這之前建議大家先參考網路上其他資源學習，例如說：[從 Hooks 開始，讓你的網頁 React 起來](https://ithelp.ithome.com.tw/users/20103315/ironman/2668?page=1)
+
 1. [FE301] React 基礎：全部
 2. 程式導師實驗計畫第二期：Week12-1 React
 3. 程式導師實驗計畫第二期：Week12-2 React 續
@@ -765,7 +771,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 5. [React.js 小書](http://huziketang.mangojuice.top/books/react/)
 
 
-[HW21 作業連結](/homeworks/week21/fe)
+[HW21 作業連結](/homeworks/week21)
 
 #### 自我檢測
 
@@ -786,7 +792,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 2. 程式導師實驗計畫第二期：Week13-1 還是 React
 3. 程式導師實驗計畫第二期：Week13-2 依舊 React
 
-[HW22 作業連結](/homeworks/week22/fe)
+[HW22 作業連結](/homeworks/week22)
 
 延伸閱讀：[前後端分離與 SPA](https://blog.techbridge.cc/2017/09/16/frontend-backend-mvc/)、[跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)
 
@@ -809,7 +815,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 1. 程式導師實驗計畫第二期：Week14-1 Redux
 2. 程式導師實驗計畫：Lesson 13-1 之 React + Redux
 
-[HW23 作業連結](/homeworks/week23/fe)
+[HW23 作業連結](/homeworks/week23)
 
 #### 自我檢測
 
@@ -827,7 +833,7 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 3. 第二期 React 補充：什麼是 super 以及生命週期的運用
 4. 第二期 React 補充：再來談談什麼是 this
 
-[HW24 作業連結](/homeworks/week24/fe)
+[HW24 作業連結](/homeworks/week24)
 
 #### 自我檢測
 
