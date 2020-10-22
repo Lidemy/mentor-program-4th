@@ -112,7 +112,7 @@ Week20 的 show time 有 lidemy 學習系統後端的程式碼導讀，裡面有
 function checkIsLogin(req, res, next) {
   // 沒有登入，導回首頁
   if (!req.session.username) {
-    red.redirect('/')
+    res.redirect('/')
     return
   }
 
@@ -120,7 +120,7 @@ function checkIsLogin(req, res, next) {
   next()
 }
 
-app.get('/admin', checkAuth, adminController.index)
+app.get('/admin', checkIsLogin, adminController.index)
 ```
 
 ## 環境變數
