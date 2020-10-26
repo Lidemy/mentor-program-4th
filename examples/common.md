@@ -141,7 +141,7 @@ https://hulitw.medium.com/lidemy-mentor-program-4th-updates-c344302c8a2d
 
 以後你去面試的時候，有可能面試官會先去你的 GitHub 看你的程式碼，所以沒有人會管在你的電腦上看起來怎樣，大家只會去看在 GitHub 上面顯示長怎樣。
 
-所以請把自己編輯器的排版調整好，我都是統一設成只用 space 不用空格，然後一次空兩格之類的，在 GitHub 上顯示沒有出問題過。
+所以請把自己編輯器的排版調整好，我都是統一設成只用 space 不用 tab，然後一次空兩格之類的，在 GitHub 上顯示沒有出問題過。（補充一下，意思是調整編輯器設定，在寫 code 的時候雖然是按 tab，但是會自動幫你轉成 2 個空白字元，而不是顯示 tab 字元）
 
 ## 資訊安全
 
@@ -170,6 +170,20 @@ https://hulitw.medium.com/lidemy-mentor-program-4th-updates-c344302c8a2d
 Week17 以後我們用的 template engine 就是這樣，永遠都預設把你要輸出的東西做編碼以後才輸出，而不是直接輸出，就可以避免掉很多的 XSS 攻擊。
 
 所以無論你是要輸出 id 還是你確認輸出的只會是數字，都可以 escape 以後再輸出，比較保險一點。
+
+最後再補充一個地方，那就是不要以為你有做處理，就不會有 XSS 了，還有一個地方你要特別注意，例如說以下程式碼：
+
+``` php
+<a href="<?php echo htmlspecialchars($link) ?>">my blog</a>
+```
+
+我們有做編碼了，看起來沒問題，但如果我可以控制 $link 的話，我就讓它內容是：`javascript:alert(1)`，輸出就會是：
+
+``` html
+<a href="javascript:alert(1)">my blog</a>
+```
+
+點了 link 之後，就會執行我所放入的 JS 程式碼，所以針對這種情形需要特別留意。更詳細的說明可以參考：[前端安全系列（一）：如何防止XSS攻击？](https://tech.meituan.com/2018/09/27/fe-security.html)
 
 ### 前端檢查 vs 後端檢查
 
