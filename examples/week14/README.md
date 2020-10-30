@@ -12,7 +12,7 @@
 
 另外，這週最常見的問題就是防火牆的設定，你東西連不進去基本上都是防火牆的問題。防火牆有兩個，一個是你主機上的，一個是你用的雲服務上面的，請確保兩個防火牆都有設定好，應該就沒問題了。
 
-附上第四期同學做得很完整的筆記：[在 AWS 上面部署 LEMP server](https://github.com/Lidemy/mentor-program-4th-Lauviah0622/blob/week14/homeworks/week14/hw2.md)
+附上第四期同學做得很完整的筆記：[在 AWS 上面部署 LEMP server](https://github.com/Lidemy/mentor-program-4th-Lauviah0622/blob/master/homeworks/week14/hw2.md)
 
 ## DNS
 
