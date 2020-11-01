@@ -2,34 +2,25 @@
 
 ## hw1：SPA 部落格
 
+在課程中我們有做了一個簡單的 blog 系統，完成了部分功能，而這一週的作業就是由你把剩下的功能完成，讓整個 blog 的功能變得更完整。
+
 請做出一個簡單的 Blog SPA，一共有三個頁面：
 
-1. About：隨意顯示一些話
-2. 文章列表：可以看到所有文章
-3. 單篇文章：可以看到單篇文章內容
+1. 登入頁面：輸入帳號密碼後可以登入
+2. 註冊頁面：可以開放使用者註冊
+3. About 頁面：隨意顯示一些關於這個部落格的話
+4. 文章列表頁面：可以看到所有文章，一頁只會顯示 10 筆，需要支援分頁功能，可以換頁
+5. 單篇文章頁面：點進去文章以後可以看到文章完整內容
 
-Route 的部分請使用 React Router，資料請串接下面的 API
+Route 的部分請使用 React Router，資料請串接課程中提到的 API
 
-圖片可參考：
+https://github.com/Lidemy/lidemy-student-json-api-server
 
-![](blog.png)
-
-API 格式：
-
-base url：https://qootest.com  
-
-```
-GET     /posts 取得所有 post
-GET     /posts/:id 取得某個 post
-```
-
-使用說明可以參考 https://github.com/typicode/json-server  
-因為這個服務是用 json server 這個 library 建的
-
-例如說 https://qootest.com/posts 就可以拿到所有 post，https://qootest.com/posts?_limit=1 就可以限制只拿 1 筆。
-
+會用到的是 Users 跟 Posts 這兩個的資料。
 
 ## hw2：簡答題
 
-1. React Router 背後的原理大概是怎麼實作的？
-2. SDK 與 API 的差別是什麼？
+1. 請列出 React 內建的所有 hook，並大概講解功能是什麼
+2. 請列出 class component 的所有 lifecycle 的 method，並大概解釋觸發的時機點
+3. 請問 class component 與 function component 的差別是什麼？
+
