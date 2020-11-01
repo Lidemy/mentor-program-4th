@@ -750,6 +750,8 @@ HTML 的部分會簡單介紹幾個常見的 tag，以及 head 的一些屬性�
 
 ### 第二十一週（11/02 ~ 11/08）：前端框架（一）
 
+備註：大家可以把 week21、22 當作一組，week 23、24 當作一組，因為 React 的地方比較難切，而且一週的時間我覺得不太夠，所以可以用兩週把課程完整看完再把作業一起寫完，可能會比較容易一些。
+
 終於要進入到前端框架 React 了（雖然嚴格來說 React 並不是一個框架，但搭配其他各種 React 生態系成員，其實就算是一個框架了）。
 
 這週會學習到 React 的基本應用以及原理，了解為什麼我們需要使用 React。
@@ -798,6 +800,9 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 指定教材：
 
 1. [FE302] React 基礎 - hooks 版本：全部
+2. [淺談新手在學習 SPA 時的常見問題：以 Router 為例](https://blog.huli.tw/2019/09/18/spa-common-problem-about-router/)
+3. [How Are Function Components Different from Classes?](https://overreacted.io/how-are-function-components-different-from-classes/)
+4. [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
 
 [HW22 作業連結](/homeworks/week22)
 
@@ -805,8 +810,6 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 
 1. [前後端分離與 SPA](https://blog.techbridge.cc/2017/09/16/frontend-backend-mvc/)
 2. [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)
-3. [How Are Function Components Different from Classes?](https://overreacted.io/how-are-function-components-different-from-classes/)
-4. [A Complete Guide to useEffect](https://overreacted.io/a-complete-guide-to-useeffect/)
 
 #### 自我檢測
 
@@ -820,6 +823,8 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 - [ ] P2 我知道每一個 hook 大概是在做什麼
 
 ### 第二十三週（11/16 ~ 11/22）：前端框架（三）
+
+（課程內容及作業尚未決定）
 
 在之前的 React 課程中，我們已經慢慢熟悉 React 的思考模式，可是還有一些問題還沒解決，雖然你現在感受不太到，但是在 App 慢慢變大之後就會碰到了。
 
@@ -838,6 +843,8 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 - [ ] 我知道我們為什麼需要 Redux
 
 ### 第二十四週（11/23 ~ 11/29）：前端框架（四）
+
+（課程內容及作業尚未決定）
 
 最後一週裡面我們將用 redux 來解決非同步操作的問題，讓大家知道如何利用它與 redux-promise 來解決非同步的一些問題。
 

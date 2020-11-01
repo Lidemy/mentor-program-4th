@@ -4,7 +4,7 @@
 
 在課程中我們有做了一個簡單的 blog 系統，完成了部分功能，而這一週的作業就是由你把剩下的功能完成，讓整個 blog 的功能變得更完整。
 
-請做出一個簡單的 Blog SPA，一共有三個頁面：
+請做出一個簡單的 Blog SPA，會有以下幾個頁面：
 
 1. 登入頁面：輸入帳號密碼後可以登入
 2. 註冊頁面：可以開放使用者註冊
@@ -17,6 +17,8 @@ Route 的部分請使用 React Router，資料請串接課程中提到的 API
 https://github.com/Lidemy/lidemy-student-json-api-server
 
 會用到的是 Users 跟 Posts 這兩個的資料。
+
+課程中做了一半的 React App：https://github.com/aszx87410/react-board-test
 
 ## hw2：簡答題
 
