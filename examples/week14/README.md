@@ -47,3 +47,13 @@ ssh tunnel 參考資料：[[教學] 透過 SSH Tunnel 將伺服器內部服務�
 
 然後如果你想反其道而行，試試看被駭客入侵的感覺，可以把資料庫帳號密碼設成什麼 test 或是 root, admin, guest 這種常見的，然後等個一兩週看看，就可以體會到這是什麼感覺
 
+## 主機連不上
+
+先確認幾件事情：
+
+1. AWS 上的 security group 22 port 有開
+2. AWS 主機預設 IP 是會換的，有設定可以調整，讓 IP 不會換
+3. 在 AWS 後台有其他方式可以連進去，可參考：[Open Terminal Sessions on EC2 Instances in your Web Browser](https://trevorsullivan.net/2018/10/16/open-terminal-sessions-on-ec2-instances-in-your-web-browser/) 跟 [SSH to AWS EC2 instance using the web browser](https://medium.com/@michael.niedermayr/ssh-to-aws-ec2-instance-using-the-web-browser-786bd4d2663b)
+4. 連進去主機後確認主機上的防火牆 22 port 有開：`sudo ufw status`
+5. 確認 ssh 服務有開：`sudo netstat -tulpn | grep :22`
+
