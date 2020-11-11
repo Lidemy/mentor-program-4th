@@ -8,3 +8,9 @@
 
 第二個問題是你在 deploy 的時候有可能需要調整一些參數，例如說 create-react-app 的 homepage 以及 react-router 的 basename，詳情可參考：[Building for Relative Paths](https://create-react-app.dev/docs/deployment#building-for-relative-paths)
 
+## 本週作業範例
+
+請參考：https://github.com/aszx87410/react-board-test/tree/blog-finished
+
+（在 blog-finished 這個 branch 裡面） 
+

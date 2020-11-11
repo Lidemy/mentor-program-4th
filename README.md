@@ -1,7 +1,5 @@
 # 程式導師實驗計畫第四期
 
-備註：二十三週以後的課程尚未完成，作業也還沒決定
-
 ## 這是什麼
 
 [程式導師實驗計畫第四期](https://bootcamp.lidemy.com)是一個為期六個月的計畫，要求學生付出一定的時間（每週至少付出三十小時），希望能在結業時培養出合格的（意思就是找得到工作）的工程師，並且在就職後依舊能持續成長，成為好的工程師。
@@ -824,42 +822,66 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 
 ### 第二十三週（11/16 ~ 11/22）：前端框架（三）
 
-（課程內容及作業尚未決定）
+在之前的 React 課程中，我們已經慢慢熟悉 React 的思考模式，雖然說 React 有提供管理 state 相關的功能，但有些時候可能不太夠用。
 
-在之前的 React 課程中，我們已經慢慢熟悉 React 的思考模式，可是還有一些問題還沒解決，雖然你現在感受不太到，但是在 App 慢慢變大之後就會碰到了。
+因此呢，Facebook 當初在推出 React 的時候，一併提出了另外一套應用程式的架構叫做 flux 來管理你的資料，以及如何改變這些資料。
 
-接續之前的課程，這一週會讓你的 Web App 變得更加完整，會導入一個新的東西：Redux，說明我們為什麼需要它。
+經過時間的演進，當初最早的 flux 架構經過社群的改良以後變成了各個 library，有著各種實作，而以 React 來說，最有名的就是一套叫做 Redux 的 library。
+
+這一週會接續之前的課程，讓你的 Web App 變得更加完整，並且導入 Redux，以及說明我們為什麼需要它。
 
 指定教材：
 
-1. 程式導師實驗計畫第二期：Week14-1 Redux
-2. 程式導師實驗計畫：Lesson 13-1 之 React + Redux
+1. [FE303] React 的好夥伴：Redux（還在做）
+
+上面這課程主要會稍微介紹 flux 以及這次的重點 redux。
+
+雖然說 redux 與 flux 長得不太一樣，但我認為能理解 flux 的話有助於理解 redux，所以可以參考：
+
+1. [Flux: In-Depth Overview](https://facebook.github.io/flux/docs/in-depth-overview/)，這是官方當初推出 flux 時候的影片，很值得參考，也有講到 React 可以當做複習
+2. [Flux For Beginners](https://blog.andrewray.me/flux-for-stupid-people/)，淺顯易懂的教學
+3. [React/Flux in Action 實戰經驗分享](https://speakerdeck.com/coodoo/flux-in-action-shi-zhan-jing-yan-fen-xiang)，當初我入門時幫助我很多的投影片
+4. [從 Flux 與 MVC 的差異來簡介 Flux](https://blog.techbridge.cc/2016/04/29/introduce-flux-from-flux-and-mvc/)
+
+如果你還有時間，可以參考第二期講解 redux 的影片：
+
+1. [程式導師實驗計畫第二期：Week14-1 Redux](https://www.youtube.com/watch?v=CrjEYMnix_8&fbclid=IwAR1Cy-0cw44dnMTExzzenmM3vTzWuTxxs4TpSV01wf29qb7m2rx0_ttRQ8M&ab_channel=Lidemy%E9%8B%B0%E5%AD%B8%E9%99%A2)
 
 [HW23 作業連結](/homeworks/week23)
 
 #### 自我檢測
 
-- [ ] 我理解 Redux 的目的以及原理
-- [ ] 我知道我們為什麼需要 Redux
+- [ ] P1 我理解 Redux 的目的以及原理
+- [ ] P1 我理解 Redux 的資料流
+- [ ] P1 我理解 Redux 當中各種重要元素，像是：dispatch, store, action, reducer 等等
+- [ ] P1 我知道我們為什麼需要 Redux
+- [ ] P1 我知道 Redux 如何搭配 middleware 解決非同步操作的問題
 
 ### 第二十四週（11/23 ~ 11/29）：前端框架（四）
 
-（課程內容及作業尚未決定）
+在上一週其實就已經把主要的課程都講完了，這一週主要是做一些額外的補充，幫大家補充幾個重要的議題，但是礙於課程時間所以沒有提到的，像是：
 
-最後一週裡面我們將用 redux 來解決非同步操作的問題，讓大家知道如何利用它與 redux-promise 來解決非同步的一些問題。
+1. SSR 該怎麼做？為什麼需要 SSR
+2. Next.js 框架介紹
+3. TypeScript 簡介
+
+作業的部分會由我先寫好一個模板給大家，只有純 UI 而已，並且附上一個假的 mock API server，可以透過一個假造出來的 API server 拿取資料，而你的任務就是把這個專案的功能給完成。
 
 指定教材：
 
-1. 第二期 Redux 補充講解：redux-thunk 與 redux-promise
-2. 程式導師實驗計畫：Lesson 13-2 之 React + Redux 下
-3. 第二期 React 補充：什麼是 super 以及生命週期的運用
-4. 第二期 React 補充：再來談談什麼是 this
+1. MTR04 上的課程（還在做）
+2. [React SSR | 從零開始實作 SSR — 基礎篇](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/server-side-rendering-ssr-in-reactjs-part1-d2a11890abfc)
+3. [React | 用實作了解 Server-Side Rendering 的運作原理](https://medium.com/starbugs/react-%E7%94%A8%E5%AF%A6%E4%BD%9C%E4%BA%86%E8%A7%A3-server-side-rendering-%E7%9A%84%E9%81%8B%E4%BD%9C%E5%8E%9F%E7%90%86-c6133d9fb30d)
+4. [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://hulitw.medium.com/introduction-mvc-spa-and-ssr-545c941669e9)
 
 [HW24 作業連結](/homeworks/week24)
 
 #### 自我檢測
 
-- [ ] 我知道 Redux 如何搭配 middleware 解決非同步操作的問題
+- [ ] P1 我知道 CSR 與 SSR 的區別
+- [ ] P2 我知道怎麼實作 SSR
+- [ ] P2 我知道 Next.js 這個框架
+- [ ] P3 我知道 TypeScript 與 JavaScript 的差異
 
 ### 第二十五週（11/30 ~ 12/06）：Final Project
 
