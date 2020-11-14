@@ -1,20 +1,17 @@
 # 作業
 
-## hw1：SPA 部落格加強版
+## hw1：Redux 版 Todo List
 
-上週的作業我們做了一個簡單的部落格，而這週的作業會延續上一週，繼續加強它的功能。
+沒錯，大家又愛又恨的 todo list 又出現了，而且是在這課程裡面最後一次出現了！
 
-我們需要增加的功能有：
+在 redux 的課程中我有示範了如何用 redux 來實作新增以及刪除 todo 這兩個功能，而這週的作業呢，就是要你把 week21 寫的 todo list 改寫成用 redux 來實作！
 
-1. 刪除文章
-2. 編輯文章
+所以你的 filter 跟 todos 都會存在 redux store 裡面，如果做不出來或是沒有想法，可以參考[官方教學](https://react-redux.js.org/introduction/basic-tutorial)。
 
-除了增加這兩個功能以外，我們原本 user 的資料是存在 context，這週的作業要請你把 context 拔掉，改用 redux 來存這個資訊。所以資料的更新也必須透過 redux。
-
-除此之外，在發 API 的部分我們原本是在 component 裡面直接用 fetch，現在請你改用 redux-thunk 來完成，所以 API 的 loading 狀態以及 response 都會存在 store 裡面。
+另外提醒大家一件事，用了 redux 不代表你需要把所有 state 都放到 redux store 裡面去，像是我在示範 add todo 功能時，input 的 value 就是放在 component state 而不是 redux store，通常只有需要被其他元件共用到的狀態會放到 store 裡面去。
 
 ## hw2：簡答題
 
 1. 為什麼我們需要 Redux？
 2. Redux 是什麼？可以簡介一下 Redux 的各個元件跟資料流嗎？
-3. Redux middleware 是什麼？
+3. 該怎麼把 React 跟 Redux 串起來？

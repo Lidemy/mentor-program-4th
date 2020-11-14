@@ -1,3 +1,6 @@
+## Redux middleware 是什麼？
+
+
 ## CSR 跟 SSR 差在哪邊？為什麼我們需要 SSR？
 
 

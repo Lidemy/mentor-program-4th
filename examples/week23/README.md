@@ -12,4 +12,8 @@
 
 然後 react-redux 就是把 Redux 的 state 給自動綁定到 component 的 props，也順便把 dispatch 一起傳進去，把 React 跟 Redux 給綁在一起，這樣才能使用。
 
+## 好文推薦
 
+1. [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+
+另外 Redux 官方文件真的很讚，把它認真看完你對 Redux 的理解會超越我（或是差我一點點啦）

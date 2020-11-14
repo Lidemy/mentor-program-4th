@@ -828,20 +828,25 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 
 經過時間的演進，當初最早的 flux 架構經過社群的改良以後變成了各個 library，有著各種實作，而以 React 來說，最有名的就是一套叫做 Redux 的 library。
 
-這一週會接續之前的課程，讓你的 Web App 變得更加完整，並且導入 Redux，以及說明我們為什麼需要它。
-
-指定教材：
-
-1. [FE303] React 的好夥伴：Redux（還在做）
-
-上面這課程主要會稍微介紹 flux 以及這次的重點 redux。
-
 雖然說 redux 與 flux 長得不太一樣，但我認為能理解 flux 的話有助於理解 redux，所以可以參考：
 
 1. [Flux: In-Depth Overview](https://facebook.github.io/flux/docs/in-depth-overview/)，這是官方當初推出 flux 時候的影片，很值得參考，也有講到 React 可以當做複習
 2. [Flux For Beginners](https://blog.andrewray.me/flux-for-stupid-people/)，淺顯易懂的教學
 3. [React/Flux in Action 實戰經驗分享](https://speakerdeck.com/coodoo/flux-in-action-shi-zhan-jing-yan-fen-xiang)，當初我入門時幫助我很多的投影片
 4. [從 Flux 與 MVC 的差異來簡介 Flux](https://blog.techbridge.cc/2016/04/29/introduce-flux-from-flux-and-mvc/)
+
+指定教材：
+
+1. [Redux 官方文件](https://redux.js.org/introduction/getting-started)
+2. [FE303] React 的好夥伴：Redux（看到 「實作簡易 todo list 結束就好」）
+
+Redux 的官方文件前陣子剛重寫過，我覺得寫得很棒，把 Redux 的許多重點講得十分清楚，因此我推薦大家從官方文件開始學習，除了這資源很棒以外，另一方面也是提前體驗「完全自學」的狀況。
+
+如果英文不太好，這邊也有舊版官方文件的中文版（只是跟新版差很多就是了）：
+
+1. [Redux 舊版文件中文版（2016 年）](https://chentsulin.github.io/redux/index.html)
+
+除了官方文件以外，也可以跟上面的課程穿插著看，應該能夠增進理解程度。
 
 如果你還有時間，可以參考第二期講解 redux 的影片：
 
@@ -855,29 +860,36 @@ React 在 2019 年 2 月推出 v16.8 這個版本，做了一個很大的改動�
 - [ ] P1 我理解 Redux 的資料流
 - [ ] P1 我理解 Redux 當中各種重要元素，像是：dispatch, store, action, reducer 等等
 - [ ] P1 我知道我們為什麼需要 Redux
-- [ ] P1 我知道 Redux 如何搭配 middleware 解決非同步操作的問題
 
 ### 第二十四週（11/23 ~ 11/29）：前端框架（四）
 
-在上一週其實就已經把主要的課程都講完了，這一週主要是做一些額外的補充，幫大家補充幾個重要的議題，但是礙於課程時間所以沒有提到的，像是：
+在上一週其實就已經把主要的課程都講完了，只剩下一個東西，那就是 redux middleware，這其實是在 redux 中相當重要的一個概念，因此本週的作業也會以這個為主。
 
-1. SSR 該怎麼做？為什麼需要 SSR
+除此之外，這一週也會做一些額外的補充，幫大家補充幾個重要的議題，像是：
+
+1. 為什麼需要 SSR？SSR 該怎麼做？
 2. Next.js 框架介紹
 3. TypeScript 簡介
 
-作業的部分會由我先寫好一個模板給大家，只有純 UI 而已，並且附上一個假的 mock API server，可以透過一個假造出來的 API server 拿取資料，而你的任務就是把這個專案的功能給完成。
-
 指定教材：
 
-1. MTR04 上的課程（還在做）
-2. [React SSR | 從零開始實作 SSR — 基礎篇](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/server-side-rendering-ssr-in-reactjs-part1-d2a11890abfc)
-3. [React | 用實作了解 Server-Side Rendering 的運作原理](https://medium.com/starbugs/react-%E7%94%A8%E5%AF%A6%E4%BD%9C%E4%BA%86%E8%A7%A3-server-side-rendering-%E7%9A%84%E9%81%8B%E4%BD%9C%E5%8E%9F%E7%90%86-c6133d9fb30d)
-4. [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://hulitw.medium.com/introduction-mvc-spa-and-ssr-545c941669e9)
+先把 [FE303] React 的好夥伴：Redux 全部看完，學習如何使用 redux-thunk，然後就可以開始做作業了。
+
+也非常推薦去看：[Redux Essentials, Part 5: Async Logic and Data Fetching#](https://redux.js.org/tutorials/essentials/part-5-async-logic)，有實際示範 redux-thunk 與 call API 的結合。
+
+再來看 Lidemy 上面 MTR04 裡的補充課程，學習 SSR, Next.js 以及 TypesScript 的基礎概念。
+
+同時也可以透過以下幾篇文章更理解 SSR，甚至是跟著文章一起實作看看：
+
+1. [React SSR | 從零開始實作 SSR — 基礎篇](https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/server-side-rendering-ssr-in-reactjs-part1-d2a11890abfc)
+2. [React | 用實作了解 Server-Side Rendering 的運作原理](https://medium.com/starbugs/react-%E7%94%A8%E5%AF%A6%E4%BD%9C%E4%BA%86%E8%A7%A3-server-side-rendering-%E7%9A%84%E9%81%8B%E4%BD%9C%E5%8E%9F%E7%90%86-c6133d9fb30d)
+3. [跟著小明一起搞懂技術名詞：MVC、SPA 與 SSR](https://hulitw.medium.com/introduction-mvc-spa-and-ssr-545c941669e9)
 
 [HW24 作業連結](/homeworks/week24)
 
 #### 自我檢測
 
+- [ ] P1 我知道 Redux 如何搭配 middleware 解決非同步操作的問題
 - [ ] P1 我知道 CSR 與 SSR 的區別
 - [ ] P2 我知道怎麼實作 SSR
 - [ ] P2 我知道 Next.js 這個框架
