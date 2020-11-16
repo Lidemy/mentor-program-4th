@@ -17,3 +17,8 @@
 1. [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 
 另外 Redux 官方文件真的很讚，把它認真看完你對 Redux 的理解會超越我（或是差我一點點啦）
+
+再來推薦一個必看的，叫做 [Redux Style Guide](https://redux.js.org/style-guide/style-guide)，會釐清很多你對 redux 的疑惑，如果想看中文版的話這邊有：
+
+1. [Redux Style Guide (中文翻譯) — Part 1](https://medium.com/@a401120174/tr-85e00315cd73)
+2. [Redux Style Guide (中文翻譯) — Part 2](https://medium.com/@a401120174/redux-%E5%AE%98%E6%96%B9%E9%A2%A8%E6%A0%BC%E6%8C%87%E5%8D%97-%E8%AD%AF-part-2-a438fb544b61)
