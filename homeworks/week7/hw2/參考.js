@@ -85,4 +85,3 @@ function changeInputBg(elements) {
     document.querySelector('.form__radio').parentElement.classList.remove('read');
   }
 }
-
