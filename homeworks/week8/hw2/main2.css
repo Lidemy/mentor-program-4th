@@ -71,7 +71,7 @@ button {
   /*banner*/
   .all {
     position: relative;
-    background: url("https://static.wixstatic.com/media/84770f_40bdbae41c4a004817a1b4b321718ad3.jpg/v1/fill/w_440,h_230,al_t,q_85,usm_0.66_1.00_0.01/84770f_40bdbae41c4a004817a1b4b321718ad3.webp") center/cover no-repeat; 
+    background: url("https://static.wixstatic.com/media/84770f_40bdbae41c4a004817a1b4b321718ad3.jpg") center/cover no-repeat; 
     background-attachment: fixed;
     padding-bottom: 50px;
   }
