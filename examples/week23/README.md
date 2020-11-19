@@ -22,3 +22,5 @@
 
 1. [Redux Style Guide (中文翻譯) — Part 1](https://medium.com/@a401120174/tr-85e00315cd73)
 2. [Redux Style Guide (中文翻譯) — Part 2](https://medium.com/@a401120174/redux-%E5%AE%98%E6%96%B9%E9%A2%A8%E6%A0%BC%E6%8C%87%E5%8D%97-%E8%AD%AF-part-2-a438fb544b61)
+
+再推薦一篇：[Blogged Answers: A (Mostly) Complete Guide to React Rendering Behavior](https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/)
