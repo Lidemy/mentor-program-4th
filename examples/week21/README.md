@@ -2,6 +2,13 @@
 
 提示：在寫完作業之後看效果最佳，沒寫作業前請不要看
 
+## 本週參考
+
+1. [HW1 todo list（無編輯功能）](https://codesandbox.io/s/week21-todo-list-example-ot7fg?file=/src/App.js)
+2. [HW1 todo list（有編輯功能）](https://codesandbox.io/s/di-21-zhou-todo-list-kebianjiban-mzo11
+)
+3. [HW2 五子棋](https://codesandbox.io/s/di-21-zhouwuziqi-h7j1t?file=/src/App.js)
+
 ## 關於 state 的改變
 
 這邊建議大家去找更多關於 React 裡面 useState 相關的文章，因為有些部分課程沒有仔細提到。
