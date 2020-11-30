@@ -42,7 +42,7 @@ class Posts extends React.Component {
 
 你可能會想說：「那現在這樣不是很好嗎？」
 
-No no no，我們其實不用真的去測試「送出 request」這一塊，只要能確定「WebAPI.getPosts」這個 fucntion 有被呼叫就行了。為什麼呢？因為我們還會對「WebAPI.getPosts」這個 function 寫另外的測試，確保它有送出 request。
+No no no，我們其實不用真的去測試「送出 request」這一塊，只要能確定「WebAPI.getPosts」這個 function 有被呼叫就行了。為什麼呢？因為我們還會對「WebAPI.getPosts」這個 function 寫另外的測試，確保它有送出 request。
 
 簡單來說，測試是會分層的，你不應該把所有層次都混在一起。
 
