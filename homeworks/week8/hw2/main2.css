@@ -20,16 +20,63 @@ button {
   outline: none;
 }
 
-/* navbar */
-.nav_wrapper {
-  height: 70px;
-  display: flex;
-  justify-content: center; 
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
-}
+
+  /* navbar */
+  .nav_wrapper {
+    height: 70px;
+    display: flex;
+    justify-content: center; 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+  }
+  
+  .navbar {
+    background: rgb(12 12 12 / 67%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav_title_name {
+    padding: 20px;
+    margin-left: 30px;
+    font-size: 26px;/*字體大小*/
+    font-family: Questrial;/*字體*/
+    color: #fff;
+  }
+  
+  .nav_title_list {
+    padding: 20px;
+    margin-right: 30px;
+    display: flex;
+    cursor: pointer;/*箭頭游標手指頭*/
+  }
+  
+  .nav_title_list a.nav_function, .nav_title_list a:hover { /*hover鼠標*/
+    color: #EFDD8D;
+  }
+  
+  .nav_title_list a {
+    padding:1px 24px;
+    margin-right: 5px;
+    text-decoration: none;/*文字去底線*/
+    transition:background 0.2s ease-in-out;
+    font-family:  WixMadeforText_W_Rg,HelveticaNeueW01-55Roma,HelveticaNeueW02-55Roma,HelveticaNeueW10-55Roma,HelveticaNeueW31,Helvetica Neue,Helvetica,Arial,メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+    font-size: 14px;
+    color: #fff;
+    border-left: solid 1px #fff;
+  }
+  
+  /*banner*/
+  .all {
+    position: relative;
+    background: url("https://static.wixstatic.com/media/84770f_40bdbae41c4a004817a1b4b321718ad3.jpg") center/cover no-repeat; 
+    background-attachment: fixed;
+    padding-bottom: 50px;
+  }
 
 .navbar {
   background: rgb(12 12 12 / 67%);
@@ -241,3 +288,33 @@ button {
     font-size: 18px;
   }
 }
+
+  @media (max-width: 768px) {/*轉成RWD版*/
+    .navbar {
+      flex-direction: column;
+      height: 130px;
+      justify-content: unset;
+    }
+  
+    .nav_title_list a {
+      padding: 0 12px;
+      font-size: 8px;
+      margin-top: 0;
+    }
+  
+    .nav_title_list{
+      font-size: 8px;
+      padding: 10px;
+      margin-top: 0;
+      margin-right: 0px;
+    }
+    
+    .main_top h1 {
+      padding: 150px 0 20px 0;
+      font-size: 18px;
+    }
+
+    .main_top {
+      font-size: 18px;
+    }
+
