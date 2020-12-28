@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>留言板-編輯</title> <!--將 CSS 另存為新的檔案 -->
+    <link rel='stylesheet' type='text/css' href='./main.css'>
+  </head>
+  <body>
+    <div class='set_moon'><span class='icon_moon'></span></div>
+    <div class='nav_wrapper'>
+      <nav class='navbar'>
+        <div class='nav_title_name'>Guestbook</div>
+        <ul class='nav_title_list'>
+          <li><a href='./index.html' class='nav_function'>Home</a></li>
+          <li><a href='#'>Logout</a></li>
+        </ul> 
+      </nav>
+    </div>
+    <section class='main'>
+      <div class='main_inner'>
+        <div class='member_info'>
+          <div class='member_data'>
+            <h1>WELCOME</h1>
+            <p>Edit your comments</p>
+            <h3 class='edit_member_area'></h3>
+          </div>
+        </div>
+        <div class='flex'>
+          <form class='home_comments'>
+            <textarea rows='7'></textarea>
+          </form>
+        </div>
+        <div class='flex2'> 
+          <button class='edit_button'>
+            <a><div class='edit_submit_btn'>Submit</div></a>
+          </button>
+          <button class='Cancel_button'>
+            <a href='./index.html'><div class='Cancel_submit_btn'>Cancel</div></a>
+          </button>
+        </div>
+    <script type='text/javascript' src='./update_comments1.js'></script>
+  </body>
+</html>

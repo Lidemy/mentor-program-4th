@@ -6,16 +6,16 @@
   box-sizing: border-box;/*border固定長寬，元素的實際大小會是 content + padding + border*/
 }
 
-
 .banner {
   background: url(https://lh4.googleusercontent.com/rd2dgrCo8lX32Jn5lkmfbzu9a7vmmXsZgS6WHE7tQCdZx8Xs4BGqE_1FlkvU9u-aE4i-d0aCD3fPX6wma7HjMLHjeYCAC9aIfw7lomDfmgGBsjZmBFyjuEPh1CovTGSSzpi9I-eVIJXzcFg)
   center/cover no-repeat;
   height: 270px;
-	
 }
+
 .main {
   background: #e91e6321;
 }
+
 .main_bottom {
   background: #ffffff;
   padding: 35px 20px 15px 25px;
@@ -25,17 +25,21 @@
   box-shadow: 1px 1px 5px 0;
   border-radius: 4px;
 }
+
 .summary_title {
   font-size: 20px;
   font-weight: bold;
 }
+
 .summary_content {
   font-size: 10px;
   padding-top: 15px;
 }
+
 #text_date {
   padding-bottom: 3px;
 }
+
 .summary_strong {
   font-size: 13px;
   font-weight: bold;
@@ -67,21 +71,25 @@
   margin-top: 10px;
   position: relative;
 }
+
 .form_item input:focus {
   outline: none;
   border-bottom: 2px solid #d93025;
 }
+
 .form_item h1 {
   font-weight: 500;
-
 }
+
 .form_radio {
   padding: 10px 0px 3px 0px;
 }
+
 .comment {
   position: absolute;
   transform: translate(0,25%);
 }
+
 .btn_submit {
   height: 35px;
   width: 80px;
@@ -93,6 +101,7 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
+
 .btn_submit:hover {
   background: #f4433685;
   box-shadow: 0 0 0 0.3px;

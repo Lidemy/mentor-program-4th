@@ -61,8 +61,6 @@
   color: #010101;
 }
 
-
-
 /* banner */
 .banner {
   position: relative;
@@ -73,8 +71,6 @@
   align-items: center;
   top: 70px;
 }
-
-
 
 /*card*/
 .lottery_card {
@@ -101,15 +97,12 @@
   margin: 19px 50px 15px 30px;
   padding-bottom: 15px;
   border-bottom: 1px dashed #484848;
-  
 }
 
 .lottery_info {
   min-width: 75px;
   font-size: 18px;
   font-weight: bold;
-  
-  
 }
 
 .lottery_content {
@@ -118,9 +111,7 @@
   flex: 1;
   margin-left: 20px;
   padding-top: 3px;
-  
 }
-
 
 /*btn*/
 .lottery_btn {
@@ -140,9 +131,6 @@
 .lottery_btn:hover {
   transform: scale(1.1);
 }
-
-
-
 
 /*footer*/
 .footer_top {
@@ -166,7 +154,6 @@
   color: #489846;
 }
 
-
 .footer_logo p {
   margin-top: 8px;
   color: #484848;
@@ -186,13 +173,11 @@
   padding: 10px;
 }
 
-
 /*prize*/
 .place {
   top:70px;
   position: relative;
 } 
-
 
 .first {
   height: 500px;
@@ -237,8 +222,6 @@
   z-index: 2;
 }
 
-
-
 /*prize-btn*/
 .prize_btn {
   position: relative;
@@ -261,10 +244,8 @@
   transform: scale(1.1);
 }
 
-
 @media (max-width: 768px) {/*轉成RWD版*/
   /*navbar*/
-
   .navbar {
     flex-direction: column;
     height: 125px;
@@ -281,6 +262,7 @@
     padding: 10px;
     margin-right: 0px;
   }
+  
   /*banner*/
   .banner {
     top: 125px;
@@ -320,7 +302,6 @@
     padding-top: 4px;
   }
   
-  
   /*btn*/
   .lottery_btn {
     font-size: 5px;
@@ -329,7 +310,6 @@
     margin: 5px auto;
     padding-top: 2px;
   }
-  
   
   /*footer*/
   .footer_top {

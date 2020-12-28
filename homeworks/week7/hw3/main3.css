@@ -14,16 +14,13 @@
 	color: #7cc21ff2;
 }
 
-
 /*main*/
 .main {
   display: flex;
   justify-content: center;
   background: #ffeb3b4a;
   padding: 20px;
-
 }
-
 
 /*list*/
 .summary {
@@ -51,7 +48,7 @@
   line-height: 1.4em;
 }
 
-/* list */
+/*list*/
 .view {
 	width: 97%;
   display: flex;
@@ -67,6 +64,7 @@
 .list p {
   padding: 0.4em 0;
 }
+
 .list li {
   position: relative;
   font-size: 18px;
@@ -109,7 +107,6 @@
 .list li input[type=checkbox]:checked ~ label p {
 	text-decoration: line-through;
 }
-
 
 .list li input[type=checkbox] + label span {
 	justify-content:flex-start;
