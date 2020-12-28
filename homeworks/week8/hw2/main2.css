@@ -17,7 +17,9 @@ a {
 button {
   border: none;
   background: none;
+  outline: none;
 }
+
 
   /* navbar */
   .nav_wrapper {
@@ -76,140 +78,216 @@ button {
     padding-bottom: 50px;
   }
 
-  .all::after {
-    content:'';
-    position: absolute;
-    background:rgba(0, 0, 0, 0.3); /*黑色遮罩*/
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.navbar {
+  background: rgb(12 12 12 / 67%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav_title_name {
+  padding: 20px;
+  margin-left: 30px;
+  font-size: 26px;/*字體大小*/
+  font-family: Questrial;/*字體*/
+  color: #fff;
+}
+
+.nav_title_list {
+  padding: 20px;
+  margin-right: 30px;
+  display: flex;
+}
+
+.nav_title_list a.nav_function, .nav_title_list a:hover { /*hover鼠標*/
+  color: #EFDD8D;
+}
+
+.nav_title_list a {
+  padding:1px 24px;
+  margin-right: 5px;
+  text-decoration: none;/*文字去底線*/
+  transition:background 0.2s ease-in-out;
+  font-family:  WixMadeforText_W_Rg,HelveticaNeueW01-55Roma,HelveticaNeueW02-55Roma,HelveticaNeueW10-55Roma,HelveticaNeueW31,Helvetica Neue,Helvetica,Arial,メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+  font-size: 14px;
+  color: #fff;
+  border-left: solid 1px #fff;
+}
+
+/*banner*/
+.all {
+  position: relative;
+  background: url("https://static.wixstatic.com/media/84770f_40bdbae41c4a004817a1b4b321718ad3.jpg") center/cover no-repeat; 
+  background-attachment: fixed;/*背景固定*/
+  padding-bottom: 50px;
+}
+
+.all::after {
+  content:'';
+  position: absolute;
+  background:rgba(0, 0, 0, 0.3); /*黑色遮罩*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/*content title*/
+.flex {
+  display: flex;
+  position: relative;
+}
+
+.flex p {
+  color: #fff;
+  font-family:  WixMadeforText_W_Rg,HelveticaNeueW01-55Roma,HelveticaNeueW02-55Roma,HelveticaNeueW10-55Roma,HelveticaNeueW31,Helvetica Neue,Helvetica,Arial,メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
+  font-size: 13px;
+  position: absolute;
+  left: 30px;
+}
+
+.live_views {
+  position: absolute;
+  min-width: 23px;
+  height: 15px;
+  background: url('./photo/eye.svg')center/cover no-repeat;;
+  z-index: 4;
+}
+
+.main_top {
+  display: inline;
+  z-index: 2;
+  color: #fff;
+  font-family: Questrial;
+  font-size: 26px;
+}
+
+.main_top h1 {
+  text-align: center;
+  margin: 0px auto;
+  padding: 110px 0 20px 0;
+  text-shadow: 0 0 20px rgba(0,0,0,1); /*文字陰影*/
+}
+
+.main_top_detail {
+  text-align: center;
+  margin: 0 auto;
+  text-shadow: 0 0 20px rgba(0,0,0,1); /*文字陰影*/
+}
+
+/*live content*/
+.live_content {
+  flex-direction: column;
+  align-items: center;
+  min-width: 250px;
+  margin: 20px 15px;
+}
+
+.live_streams {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 100px;
+}
+
+.live_content_bottom {
+  display: flex;
+  background: rgb(12 12 12 / 75%);
+  align-items: center;
+}
+
+.streamer_avatar {
+  width:40px;
+  height:40px; 
+  border-radius:999em; /*正圓形*/
+  background-color:rgb(20, 216, 134);
+  margin: 10px;
+}
+
+.live_content_top {
+  height: 200px;
+  width: 100%;
+  background: darkblue;
+}
+
+.streamer_detail p {
+  font-size: 16px;
+  color: #fff;
+  overflow : hidden;
+  text-overflow : ellipsis;
+}
+
+.live_shadow {
+  position: relative;
+  margin-top: 40px;
+  box-shadow: -4px 4px 6px 0 #212423;/*陰影*/
+  transition: transform 0.1s;/*放大效果維持0.1秒*/
+  z-index: 3;
+}
+
+.live_shadow:hover {
+  transform: scale(1.05);/*放大1.1倍*/
+}
+
+/*more_button*/
+.button {
+  margin: 30px auto;
+  display: block;
+} 
+
+.more_btn {
+  position: relative;
+  z-index: 4;
+  font-family: MicrosoftJhengHei;
+  font-size: 14px;
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: background 0.1s ease-in-out;
+  background: #47454580;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 0.2px #010101;
+  color: #ffffff;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.more_btn:hover {
+  background: rgb(12 12 12 / 67%);
+  border: 1px solid #ffffff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {/*轉成RWD版*/
+  .navbar {
+    flex-direction: column;
+    height: 130px;
+    justify-content: unset;
   }
 
-  /*content title*/
-  .flex {
-    display: flex;
-    position: relative;
+  .nav_title_list a {
+    padding: 0 12px;
+    font-size: 8px;
+    margin-top: 0;
   }
 
-  .flex p {
-    color: #fff;
-    font-family:  WixMadeforText_W_Rg,HelveticaNeueW01-55Roma,HelveticaNeueW02-55Roma,HelveticaNeueW10-55Roma,HelveticaNeueW31,Helvetica Neue,Helvetica,Arial,メイリオ,meiryo,ヒラギノ角ゴ pro w3,hiragino kaku gothic pro,sans-serif;
-    font-size: 13px;
-    position: absolute;
-    left: 30px;
+  .nav_title_list{
+    font-size: 8px;
+    padding: 10px;
+    margin-top: 0;
+    margin-right: 0px;
   }
-
-  .live_views {
-    position: absolute;
-    min-width: 23px;
-    height: 15px;
-    background: url('./photo/eye.svg')center/cover no-repeat;;
-    z-index: 4;
+  
+  .main_top h1 {
+    padding: 150px 0 20px 0;
+    font-size: 18px;
   }
 
   .main_top {
-    display: inline;
-    z-index: 2;
-    color: #fff;
-    font-family: Questrial;
-    font-size: 26px;
+    font-size: 18px;
   }
-  .main_top h1 {
-    text-align: center;
-    margin: 0px auto;
-    padding: 110px 0 20px 0;
-    text-shadow: 0 0 20px rgba(0,0,0,1); /*文字陰影*/
-  }
-  .main_top_detail {
-    text-align: center;
-    margin: 0 auto;
-    text-shadow: 0 0 20px rgba(0,0,0,1); /*文字陰影*/
-  }
-
-  /*live content*/
-  .live_content {
-    flex-direction: column;
-    align-items: center;
-    min-width: 250px;
-    margin: 20px 15px;
-  }
-
-  .live_streams {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 100px;
-  }
-
-  .live_content_bottom {
-    display: flex;
-    background: rgb(12 12 12 / 75%);
-    align-items: center;
-  }
-
-  .streamer_avatar {
-    width:40px;
-    height:40px; 
-    border-radius:999em; /*正圓形*/
-    background-color:rgb(20, 216, 134);
-    margin: 10px;
-  }
-
-  .live_content_top {
-    height: 200px;
-    width: 100%;
-    background: darkblue;
-  }
-
-  .streamer_detail p {
-    font-size: 16px;
-    color: #fff;
-    overflow : hidden;
-    text-overflow : ellipsis;
-  }
-  
-  .live_shadow {
-    position: relative;
-    margin-top: 40px;
-    box-shadow: -4px 4px 6px 0 #212423;/*陰影*/
-    transition: transform 0.1s;/*放大效果維持0.1秒*/
-    z-index: 3;
-  }
-
-  .live_shadow:hover {
-    transform: scale(1.05);/*放大1.1倍*/
-  }
-
-  /*more_button*/
-  .button {
-    margin: 30px auto;
-    display: block;
-  } 
-
-
-  .more_btn {
-    position: relative;
-    z-index: 4;
-    font-family: MicrosoftJhengHei;
-    font-size: 14px;
-    padding: 8px 14px;
-    text-decoration: none;
-    transition: background 0.1s ease-in-out;
-    background: ##47454580;
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 0 0.2px #010101;
-    color: #ffffff;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .more_btn:hover {
-    background: rgb(12 12 12 / 67%);
-    border: 1px solid #ffffff;
-    transform: scale(1.05);
-  }
+}
 
   @media (max-width: 768px) {/*轉成RWD版*/
     .navbar {
@@ -239,3 +317,4 @@ button {
     .main_top {
       font-size: 18px;
     }
+

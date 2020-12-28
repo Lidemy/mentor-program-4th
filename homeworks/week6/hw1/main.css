@@ -59,8 +59,6 @@
   color: #010101;
 }
 
-
-
 /* banner */
 .banner {
   position: relative;
@@ -79,6 +77,7 @@
   font-weight: bold;/*粗體*/
   z-index: 2;
 }
+
 .banner::after { 
   content:'';
   position: absolute;
@@ -248,7 +247,6 @@
   color: #489846;
 }
 
-
 .footer_logo p {
   margin-top: 8px;
   color: #484848;
@@ -267,8 +265,6 @@
   color: #fff;
   padding: 10px;
 }
-
-
 
 @media (max-width: 768px) {/*轉成RWD版*/
   .navbar {
@@ -366,7 +362,6 @@
 
   .footer_top {
     flex-direction:column-reverse;
-
   }
 
   .footer_logo {

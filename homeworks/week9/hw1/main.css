@@ -1,0 +1,402 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, ui-sans-serif;
+	box-sizing: border-box; /*border固定長寬，元素的實際大小會是 content + padding + border*/
+}
+
+li {
+	list-style-type: none; /*去除點點*/
+}
+
+a {
+	cursor: pointer; /*箭頭游標手指頭*/
+	text-decoration: none;
+	color: #fff;
+}
+
+button {
+	border: none;
+	background: none;
+	text-decoration: none;
+	outline: none;
+	cursor: pointer; /*箭頭游標手指頭*/
+}
+
+input {
+	outline: none;
+	cursor: pointer; /*箭頭游標手指頭*/
+}
+
+/*banner*/
+body {
+	background: url("https://static.wixstatic.com/media/0b340f_7cd49c8b788046e482e5a1d00f39c7ff~mv2_d_2349_1566_s_2.jpg")
+		center/cover no-repeat;
+	background-attachment: fixed; /*背景固定*/
+}
+
+.icon_moon {
+	height: 100vh;
+	width: 100vw;
+	background: url("https://static.wixstatic.com/media/abd140_32c005d9676146da86e0b180cbf03291~mv2.png")
+		center no-repeat;
+	background-size: 70vh;
+	position: relative;
+	z-index: 3;
+}
+
+.set_moon {
+	height: 100%;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+/* navbar */
+.nav_wrapper {
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	position: relative;
+}
+
+.navbar {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav_title_name {
+	padding: 20px;
+	margin-left: 30px;
+	font-size: 26px; /*字體大小*/
+	font-family: Arial, Helvetica, ui-sans-serif;
+	color: #fff;
+}
+
+.nav_title_list {
+	margin-right: 30px;
+	display: flex;
+}
+
+.nav_title_list li {
+	padding: 20px 40px 20px 20px;
+}
+
+.nav_title_list a.nav_function,
+.nav_title_list a:hover {
+	/*hover鼠標*/
+	color: #ff4e01;
+	transition: color 0.4s ease 0s;
+}
+
+.nav_title_list a {
+	padding: 12px 24px;
+	margin-right: 5px;
+	transition: background 0.2s ease-in-out;
+	font-size: 20px;
+	color: #fff;
+	font-family: caudex, serif;
+}
+
+/*member-info*/
+.main {
+	position: relative;
+	z-index: 4;
+}
+
+.member_data {
+	font-size: 26px;
+	color: #fff;
+	text-align: center;
+}
+
+.member_data h1 {
+	font-size: 50px;
+	padding-top: 210px;
+	padding-bottom: 5px;
+}
+
+.member_data p {
+	font-size: 16px;
+	padding-bottom: 35px;
+}
+
+.member_data h2 {
+	font-size: 35px;
+	margin-bottom: 10px;
+}
+
+/*form*/
+.form_login input {
+	display: block;
+	position: relative;
+	font-size: 10px;
+	padding: 8px 10px;
+	background: #47454580;
+	box-shadow: 0 0 0 0.2px #010101;
+	margin: 15px auto;
+	border-radius: 4px;
+	border: solid 1px #fff;
+	color: #fff;
+}
+
+.form_login input:focus {
+	background: black;
+	border: solid 1px #ff4e01;
+	color: #ff4e01;
+}
+
+.form_login input::placeholder {
+	color: #fff;
+}
+
+.form_login input:focus::placeholder {
+	color: #ff4e01;
+}
+
+/*coments*/
+.flex {
+	display: flex;
+	justify-content: center;
+}
+
+.home_comments textarea {
+	padding-left: 5px;
+	position: relative;
+	width: 230px;
+	font-size: 14px;
+	background: #47454580;
+	box-shadow: 0 0 0 0.2px #010101;
+	border-radius: 4px;
+	border: solid 1px #fff;
+	color: #fff;
+}
+
+.home_comments textarea:focus {
+	background: black;
+	border: solid 1px #ff4e01;
+	color: #ff4e01;
+	outline: none;
+}
+
+.home_comments textarea::placeholder {
+	color: #fff;
+}
+
+.home_comments textarea:focus::placeholder {
+	color: #ff4e01;
+}
+
+/*button*/
+.button {
+	margin: 30px auto;
+	display: block;
+	position: relative;
+	z-index: 5;
+}
+
+.submit_btn {
+	position: relative;
+	font-size: 14px;
+	padding: 8px 14px;
+	transition: background 0.1s ease-in-out;
+	background: #47454580;
+	border: 1px solid #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 0 0 0.2px #010101;
+	color: #ffffff;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.submit_btn:hover {
+	background: rgb(12 12 12 / 72%);
+	border: 1px solid #ff4e01;
+	color: #ff4e01;
+	transform: scale(1.05);
+}
+
+/*comments-btn*/
+.comments_button {
+	position: absolute;
+	transform: translate(218%, 240%);
+}
+
+.comments_submit_btn {
+	position: relative;
+	font-size: 14px;
+	padding: 8px 14px;
+	transition: background 0.1s ease-in-out;
+	background: #47454580;
+	border: 1px solid #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 0 0 0.2px #010101;
+	color: #ffffff;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.comments_submit_btn:hover {
+	background: rgb(12 12 12 / 72%);
+	border: 1px solid #ff4e01;
+	color: #ff4e01;
+	transform: scale(1.05);
+}
+
+.hr {
+	margin: 10px auto;
+	width: 45%;
+	box-shadow: 0 0 0 0.3px #fff;
+}
+
+/*massage*/
+.message_card {
+	margin-top: 25px;
+	padding: 5px;
+	position: relative;
+	width: 234px;
+	min-height: 100px;
+	font-size: 14px;
+	background: #47454580;
+	box-shadow: 0 0 0 1.2px #795548;
+	border-radius: 4px;
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.edit img {
+	padding-top: 4px;
+	width: 15px;
+	filter: invert(1); /*圖片反白*/
+}
+
+.delete img {
+	width: 15px;
+	filter: invert(1);
+}
+
+.nickname {
+	color: #fff;
+	display: block;
+	font-size: 18px;
+}
+
+.create_time {
+	margin-right: 27px;
+}
+
+.avatar img {
+	width: 39px;
+	filter: invert(0.7);
+	position: absolute;
+	left: 50%;
+	transform: translate(-415%, 1%);
+}
+
+.message_card p {
+	margin-top: 5px;
+	white-space: break-spaces;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+/*edit*/
+.member_data h3 {
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.flex2 {
+	display: flex;
+	justify-content: space-around;
+	width: 186px;
+	margin: 12px auto;
+}
+
+.edit_submit_btn,
+.Cancel_submit_btn {
+	font-size: 14px;
+	padding: 8px 14px;
+	transition: background 0.1s ease-in-out;
+	background: #47454580;
+	border: 1px solid #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 0 0 0.2px #010101;
+	color: #ffffff;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.edit_submit_btn,
+.Cancel_submit_btn:hover {
+	background: rgb(12 12 12 / 72%);
+	border: 1px solid #ff4e01;
+	color: #ff4e01;
+	transform: scale(1.05);
+}
+
+/*pages*/
+.flex3 {
+	display: flex;
+	justify-content: center;
+	z-index: 6;
+	position: relative;
+	padding-top: 30px;
+}
+
+.pages p {
+	font-size: 14px;
+	color: #ffffff;
+	padding: 0 25px;
+}
+
+.pages img {
+	padding-top: 4px;
+	width: 15px;
+	filter: invert(1); /*圖片反白*/
+	padding: 0 2px;
+	margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+	/*轉成RWD版*/
+	/*navbar*/
+	.navbar {
+		flex-direction: column;
+		height: 125px;
+		justify-content: unset;
+	}
+
+	.nav_title_list {
+		margin: 0;
+	}
+
+	.nav_title_name {
+		margin: 10px 0 0 0;
+	}
+
+	.nav_title_list li {
+		font-size: 6px;
+		margin: 0;
+		padding: 0;
+	}
+
+	.comments_button {
+		transform: translate(107%, 371%);
+	}
+
+	.home_comments textarea {
+		margin-bottom: 52px;
+	}
+}

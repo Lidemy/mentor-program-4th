@@ -2,7 +2,7 @@
 先串API取得前五名熱門的遊戲
 手動新增前五名熱門的遊戲HTML <li> 標籤
 放回 <ul> 標籤上
-利用response回傳第一名的遊戲名稱去呼叫getStream
+利用response回傳第一名的遊戲名稱去呼叫getStreams
 */ 
 
 const CLIENT_Id = 't1i56f8yeobnh6vqwymu1jo3tkhtlp';
@@ -37,8 +37,8 @@ getTopGames()
 /*
 監聽畫面前五名遊戲
 並限制每次產生實況內容為20個
-利用點擊事件拿到的遊戲名稱去呼叫getStream
-e.target.text =>表示該遊戲名稱
+利用點擊事件拿到的遊戲名稱去呼叫getStreams
+e.target.text =>表示拿到的遊戲名稱
 */
 document.querySelector('.nav_title_list').addEventListener('click', (e) => {
   if(e.target.text){
@@ -50,7 +50,7 @@ document.querySelector('.nav_title_list').addEventListener('click', (e) => {
 
 /*
 getStreams函式帶入參數name
-name =>表示為上面的result.top[0].game.name
+name =>表示為上面傳進來的遊戲名稱
 串API取得目前的遊戲
 手動新增實況內容HTML <li> 標籤
 放回 <ul> 標籤上
