@@ -254,6 +254,7 @@ document.querySelector(".last").addEventListener("click", (e) => {
 
 function setPage() {
 	pagination.innerText = `頁碼 : ${now_page} / ${total_page}`;
+	document.querySelector(".massage_content").innerHTML = "";
 	getComments(now_page);
 }
 
