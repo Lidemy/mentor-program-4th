@@ -26,40 +26,39 @@ function getComments(page) {
 				if (isLogin && result[i].nickname === nickname) {
 					/*判斷登入狀態，比對該使用者是否具有第i篇留言的編輯刪除權限*/
 					element.innerHTML = `
-          <div class='message_user'>
-            <a class='avatar' href='#'>
-              <img src='./photo/user-circle.svg'>
-            </a>
-          </div>  
-          <div class='message_card'>
-            <span class='nickname'>${escape(result[i].nickname)}</span> 
-            <span class='create_time'>${new Date(
+					  <div class='message_user'>
+						<a class='avatar' href='#'>
+						  <img src='./photo/user-circle.svg'>
+						</a>
+					  </div>  
+					  <div class='message_card'>
+						<span class='nickname'>${escape(result[i].nickname)}</span> 
+						<span class='create_time'>${new Date(
 							result[i].createdAt
 						).toLocaleString()}</span> 
-            <a class='edit' href='./update_comments.html?id=${result[i].id}'>
-              <img src='./photo/pencil.svg'>
-            </a>
-            <a class='delete' data-value='${result[i].id}'>
-              <img src='./photo/delete.svg'>
-            </a>
-            <p>${escape(result[i].body)}</p>
-          </div>
-        `;
+						<a class='edit' href='./update_comments.html?id=${result[i].id}'>
+						  <img src='./photo/pencil.svg'>
+						</a>
+						<a class='delete' data-value='${result[i].id}'>
+						  <img src='./photo/delete.svg'>
+						</a>
+						<p>${escape(result[i].body)}</p>
+					  </div>
+					`;
 				} else {
 					element.innerHTML = `
-          <div class='message_user'>
-            <a class='avatar' href='#'>
-              <img src='./photo/user-circle.svg'>
-            </a>
-          </div>  
-          <div class='message_card'>
-            <span class='nickname'>${escape(result[i].nickname)}</span> 
-            <span class='create_time'>${new Date(
+						<div class='message_user'>
+						<a class='avatar' href='#'>
+							<img src='./photo/user-circle.svg'>
+						</a>
+						</div>  
+						<div class='message_card'>
+						<span class='nickname'>${escape(result[i].nickname)}</span> 
+						<span class='create_time'>${new Date(
 							result[i].createdAt
 						).toLocaleString()}</span> 
-            <p>${escape(result[i].body)}</p>
-          </div>
-        `;
+						<p>${escape(result[i].body)}</p>
+						</div>`;
 				}
 				document.querySelector(".massage_content").appendChild(element);
 			}
@@ -152,31 +151,31 @@ function setNavbar() {
 	element_status.classList.add("nav_li");
 	if (isLogin === false) {
 		element_register.innerHTML = `
-      <a href='./register_page.html'>Register</a>
-    `;
+	  <a href='./register_page.html'>Register</a>
+	`;
 		element_status.innerHTML = `
-      <a href='./login_page.html'>Login</a>
-    `;
+	  <a href='./login_page.html'>Login</a>
+	`;
 		comments_submit.innerHTML = `
-      <form class='home_comments'>
-        <textarea class='create_content' rows='7' placeholder='You need to sign up before you leave a message.'></textarea>
-      </form>
-    `;
+	  <form class='home_comments'>
+		<textarea class='create_content' rows='7' placeholder='You need to sign up before you leave a message.'></textarea>
+	  </form>
+	`;
 	} else if (isLogin === true) {
 		element_register.innerHTML = `
-      <a href='./register_page.html'>Register</a>
-    `;
+	  <a href='./register_page.html'>Register</a>
+	`;
 		element_status.innerHTML = `
-      <a href='#'class='nav_li_Logout'>Logout</a>
-    `;
+	  <a href='#'class='nav_li_Logout'>Logout</a>
+	`;
 		comments_submit.innerHTML = ` 
-      <form class='home_comments'>
-        <textarea class='create_content' rows='7' placeholder='Leave a message.'></textarea>
-      </form>
-      <button class='comments_button'>
-        <a><div class='comments_submit_btn'>Submit</div></a>
-      </button>
-    `;
+	  <form class='home_comments'>
+		<textarea class='create_content' rows='7' placeholder='Leave a message.'></textarea>
+	  </form>
+	  <button class='comments_button'>
+		<a><div class='comments_submit_btn'>Submit</div></a>
+	  </button>
+	`;
 	}
 	document.querySelector(".nav_title_list").appendChild(element_register);
 	document.querySelector(".nav_title_list").appendChild(element_status);

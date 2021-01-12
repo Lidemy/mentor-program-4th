@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, ui-sans-serif;
-	box-sizing: border-box; /*border固定長寬，元素的實際大小會是 content + padding + border*/
+	box-sizing: border-box; /*border固定長寬，元素的實際大小會是 content + border + padding */
 }
 
 li {

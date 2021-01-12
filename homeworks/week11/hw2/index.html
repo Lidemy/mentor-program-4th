@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>部落格-首頁</title>
+		<!--將 CSS 另存為新的檔案 -->
+		<link rel="stylesheet" type="text/css" href="./main.css" />
+	</head>
+	<body>
+		<div class="nav_wrapper">
+			<nav class="navbar">
+				<p class="nav_title_name">Who's Blog</p>
+				<div class="nav_title">
+					<ul class="nav_title_list_left">
+						<li><a href="./index.html" class="nav_function">首頁</a></li>
+						<li>
+							<a href="./posts_list_page.html" class="nav_posts">文章列表</a>
+						</li>
+						<!-- <li>
+							<a href="./create_post.html" class="nav_create_posts">新增文章</a>
+						</li> -->
+					</ul>
+					<ul class="nav_title_list_right">
+						<!-- <li>
+							<a href="./register_page.html" class="nav_register">註冊</a>
+						</li>
+						<li>
+							<a href="./login_page.html" class="nav_login nav_logout">登入</a>
+						</li>
+						<li>
+							<a href="./backstage_page.html" class="backstage">後台</a>
+						</li> -->
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<section class="section">
+			<div class="main">
+				<ul class="main_inner"></ul>
+			</div>
+		</section>
+		<div class="pages flex3">
+			<a href="#">
+				<img class="first" src="./photo/first.svg" />
+			</a>
+			<a href="#">
+				<img class="previous" src="./photo/previous.svg" />
+			</a>
+			<p class="pagination">1/3</p>
+			<a href="#">
+				<img class="next" src="./photo/next.svg" />
+			</a>
+			<a href="#">
+				<img class="last" src="./photo/last.svg" />
+			</a>
+		</div>
+		<script type="text/javascript" src="./index.js"></script>
+		<footer>
+			<p>© 2020 by The Who's Blog.</p>
+		</footer>
+	</body>
+</html>
